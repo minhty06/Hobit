@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D412497B29E7325C008F9B67 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D412497A29E7325C008F9B67 /* HomeView.swift */; };
+		D412497D29E73801008F9B67 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D412497C29E73801008F9B67 /* NavBar.swift */; };
 		D419D41F29E5194A0064E89E /* HobitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D419D41E29E5194A0064E89E /* HobitApp.swift */; };
 		D419D42129E5194A0064E89E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D419D42029E5194A0064E89E /* ContentView.swift */; };
 		D419D42329E5194C0064E89E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D419D42229E5194C0064E89E /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D412497A29E7325C008F9B67 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D412497C29E73801008F9B67 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		D419D41B29E5194A0064E89E /* Hobit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hobit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D419D41E29E5194A0064E89E /* HobitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobitApp.swift; sourceTree = "<group>"; };
 		D419D42029E5194A0064E89E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,7 +63,9 @@
 			children = (
 				D419D41E29E5194A0064E89E /* HobitApp.swift */,
 				D419D42029E5194A0064E89E /* ContentView.swift */,
+				D412497A29E7325C008F9B67 /* HomeView.swift */,
 				FB8E1A7529E635EA00AE885E /* HabitDashboard.swift */,
+				D412497C29E73801008F9B67 /* NavBar.swift */,
 				FB8E1A7429E6353200AE885E /* Colors */,
 				FB8E1A6F29E62FDD00AE885E /* Helpers */,
 				D419D42229E5194C0064E89E /* Assets.xcassets */,
@@ -165,6 +171,8 @@
 				D419D42129E5194A0064E89E /* ContentView.swift in Sources */,
 				FB8E1A7329E6326200AE885E /* Colors.swift in Sources */,
 				FB8E1A7629E635EA00AE885E /* HabitDashboard.swift in Sources */,
+				D412497B29E7325C008F9B67 /* HomeView.swift in Sources */,
+				D412497D29E73801008F9B67 /* NavBar.swift in Sources */,
 				FB8E1A7129E62FF700AE885E /* ProgressCircle.swift in Sources */,
 				D419D41F29E5194A0064E89E /* HobitApp.swift in Sources */,
 			);
