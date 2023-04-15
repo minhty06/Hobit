@@ -34,27 +34,7 @@ struct HomeView: View {
                         .font(.title2.weight(.medium))
                         .foregroundColor(.primary)
                     VStack(spacing: 7) {
-                        HStack(spacing: 10) {
-                            Image("Rock2")
-                                .renderingMode(.original)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 70, height: 70)
-                                .clipped()
-                                .mask { RoundedRectangle(cornerRadius: 8, style: .continuous) }
-                            VStack(alignment: .leading) {
-                                Text("Routine Placeholder")
-                                    .font(.system(size: 16, weight: .medium, design: .default))
-                                Text("March 9th")
-                                    .font(.footnote)
-                                    .foregroundColor(.secondary)
-                            }
-                            .font(.subheadline)
-                            Spacer()
-                            Image(systemName: "ellipsis")
-                                .foregroundColor(Color(.displayP3, red: 234/255, green: 76/255, blue: 97/255))
-                                .font(.title3)
-                        }
+                        RoutineDashboard()
                     }
                     Spacer()
                 }

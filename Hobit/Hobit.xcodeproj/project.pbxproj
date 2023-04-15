@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA45FD4529EA550600CB8593 /* RoutineDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA45FD4429EA550600CB8593 /* RoutineDashboard.swift */; };
+		CA45FD4929EA59C500CB8593 /* SubCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA45FD4829EA59C500CB8593 /* SubCircleView.swift */; };
+		CA45FD4B29EA59E200CB8593 /* MainCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA45FD4A29EA59E200CB8593 /* MainCircleView.swift */; };
 		D412497B29E7325C008F9B67 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D412497A29E7325C008F9B67 /* HomeView.swift */; };
 		D412497D29E73801008F9B67 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D412497C29E73801008F9B67 /* NavBar.swift */; };
 		D419D41F29E5194A0064E89E /* HobitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D419D41E29E5194A0064E89E /* HobitApp.swift */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA45FD4429EA550600CB8593 /* RoutineDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDashboard.swift; sourceTree = "<group>"; };
+		CA45FD4829EA59C500CB8593 /* SubCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCircleView.swift; sourceTree = "<group>"; };
+		CA45FD4A29EA59E200CB8593 /* MainCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCircleView.swift; sourceTree = "<group>"; };
 		D412497A29E7325C008F9B67 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D412497C29E73801008F9B67 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		D419D41B29E5194A0064E89E /* Hobit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hobit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +71,7 @@
 				D419D42029E5194A0064E89E /* ContentView.swift */,
 				D412497A29E7325C008F9B67 /* HomeView.swift */,
 				FB8E1A7529E635EA00AE885E /* HabitDashboard.swift */,
+				CA45FD4429EA550600CB8593 /* RoutineDashboard.swift */,
 				D412497C29E73801008F9B67 /* NavBar.swift */,
 				FB8E1A7429E6353200AE885E /* Colors */,
 				FB8E1A6F29E62FDD00AE885E /* Helpers */,
@@ -86,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				FB8E1A7029E62FF700AE885E /* ProgressCircle.swift */,
+				CA45FD4829EA59C500CB8593 /* SubCircleView.swift */,
+				CA45FD4A29EA59E200CB8593 /* MainCircleView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -169,12 +178,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D419D42129E5194A0064E89E /* ContentView.swift in Sources */,
+				CA45FD4B29EA59E200CB8593 /* MainCircleView.swift in Sources */,
 				FB8E1A7329E6326200AE885E /* Colors.swift in Sources */,
 				FB8E1A7629E635EA00AE885E /* HabitDashboard.swift in Sources */,
 				D412497B29E7325C008F9B67 /* HomeView.swift in Sources */,
 				D412497D29E73801008F9B67 /* NavBar.swift in Sources */,
 				FB8E1A7129E62FF700AE885E /* ProgressCircle.swift in Sources */,
+				CA45FD4929EA59C500CB8593 /* SubCircleView.swift in Sources */,
 				D419D41F29E5194A0064E89E /* HobitApp.swift in Sources */,
+				CA45FD4529EA550600CB8593 /* RoutineDashboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
