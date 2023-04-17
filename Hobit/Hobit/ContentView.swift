@@ -83,7 +83,7 @@ struct ContentView: View {
                     }, label: {
                         if number == 2 {
                             Image(systemName: icons[number])
-                                .background(.green)
+                                .background(Color.lightGreen)
                                 .frame(width: 50, height: 50)
                                 .cornerRadius(50)
                                 .foregroundColor(.white)
@@ -93,7 +93,7 @@ struct ContentView: View {
                         
                         else {
                             Image(systemName: icons[number])
-                                .foregroundColor(selectionIndex == number ? .green : .gray)
+                                .foregroundColor(selectionIndex == number ? Color.lightGreen : Color.gray)
                                 .font(.system(size:25, weight: .medium, design: .rounded))
                         }
                     })
