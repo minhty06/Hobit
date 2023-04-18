@@ -29,8 +29,7 @@ struct HabitDashboard: View {
                     .padding(20)
             }
                 .background(
-                    RoundedRectangle(cornerRadius: 20)
-                        .padding(4.0))
+                    RoundedRectangle(cornerRadius: 20))
 
     }
 }
