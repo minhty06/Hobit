@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+// MARK- to be edited
 struct GoalsForm: View {
     @State private var goalName: String = ""
     @State private var goalDetail: String = ""
@@ -30,9 +32,10 @@ struct GoalsForm: View {
                             Text("\(goalDuration) days")
                         }
                     }
+                    // Can Pass in a function if needed to do something with data
                     Button(action: {
                     }){
-                        Text("Submit")
+                        Text("Submit Goal")
                     }
                 }
             }

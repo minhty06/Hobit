@@ -54,10 +54,7 @@ struct ContentView: View {
                     }
                 case 2:
                     NavigationView {
-                        VStack {
-                            Text("3rd Screen")
-                        }
-                        .navigationTitle("Add")
+                        HomeView()
                     }
                 case 3:
                     NavigationView {

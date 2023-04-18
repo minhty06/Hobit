@@ -23,7 +23,7 @@ struct RoutineForm: View {
                     }
                     
                     Section(header: Text("Details")) {
-                        TextField("Enter routine name", text: $routineDetail)
+                        TextField("Enter Detail", text: $routineDetail)
                     }
                     
                     Section(header: Text("Routine Tasks")) {
@@ -38,9 +38,10 @@ struct RoutineForm: View {
                             Text("Add Task")
                         })
                     }
+                    // Can Pass in a function if needed to do something with data
                     Button(action: {
                     }) {
-                        Text("Submit")
+                        Text("Submit Routine")
                     }
                 }
             }

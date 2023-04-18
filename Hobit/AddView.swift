@@ -11,18 +11,17 @@ struct AddView: View {
  
     var body: some View {
  
-        VStack {
+        NavigationStack {
             
-            Text("New")
+            Text("Add")
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(30)
                 .fontWeight(.heavy)
                 .font(.system(size: 30))
-                .foregroundColor(Color.lightGreen)
+                .foregroundColor(Color.black)
  
-            Button(action:  {
-                print("Share tapped!")
-            }){
+            // Routine
+            NavigationLink(destination: RoutineForm()){
                 VStack {
                     Text("Routines")
                         .fontWeight(.semibold)
@@ -42,9 +41,8 @@ struct AddView: View {
                 .padding(.horizontal, 20)
             }
  
-            Button(action: {
-                print("Edit tapped!")
-            }) {
+            //Habit
+            NavigationLink(destination: HabitForm()){
                 VStack {
                     Text("Habits")
                         .fontWeight(.semibold)
@@ -63,10 +61,9 @@ struct AddView: View {
                 .cornerRadius(20)
                 .padding(.horizontal, 20)
             }
- 
-            Button(action: {
-                print("Delete tapped!")
-            }) {
+            
+            // Goals
+            NavigationLink(destination: GoalsForm()){
                 VStack {
                     Text("Goals")
                         .fontWeight(.semibold)
@@ -87,6 +84,7 @@ struct AddView: View {
             }
  
         }
+        
     }
 }
 
