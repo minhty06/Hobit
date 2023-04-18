@@ -51,7 +51,7 @@ struct RoutineDashboard: View {
                              SubCircleView(index: index, completionHandler: { subcircleIndex, isComplete in
                                  subcircleCompletion[subcircleIndex] = isComplete
                                  checkCompletion()
-                             }).padding(.trailing, 10)
+                             }).padding(.horizontal, 10)
                          }
                      }.padding(5)
                      

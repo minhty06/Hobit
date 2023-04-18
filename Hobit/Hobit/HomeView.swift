@@ -34,6 +34,8 @@ struct HomeView: View {
                         .font(.title2.weight(.medium))
                         .foregroundColor(.primary)
                     VStack(spacing: 7) {
+                        //Place routine dashboard here
+                        
                         RoutineDashboard()
                     }
                     Spacer()

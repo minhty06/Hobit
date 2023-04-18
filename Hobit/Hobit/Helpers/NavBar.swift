@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//V1 Nav Bar
 struct NavBar: View {
     var body: some View {
         VStack(spacing: 10) {

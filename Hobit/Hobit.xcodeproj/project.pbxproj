@@ -72,7 +72,6 @@
 				D412497A29E7325C008F9B67 /* HomeView.swift */,
 				FB8E1A7529E635EA00AE885E /* HabitDashboard.swift */,
 				CA45FD4429EA550600CB8593 /* RoutineDashboard.swift */,
-				D412497C29E73801008F9B67 /* NavBar.swift */,
 				FB8E1A7429E6353200AE885E /* Colors */,
 				FB8E1A6F29E62FDD00AE885E /* Helpers */,
 				D419D42229E5194C0064E89E /* Assets.xcassets */,
@@ -95,6 +94,7 @@
 				FB8E1A7029E62FF700AE885E /* ProgressCircle.swift */,
 				CA45FD4829EA59C500CB8593 /* SubCircleView.swift */,
 				CA45FD4A29EA59E200CB8593 /* MainCircleView.swift */,
+				D412497C29E73801008F9B67 /* NavBar.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
