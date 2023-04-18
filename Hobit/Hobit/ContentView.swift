@@ -28,10 +28,14 @@ struct ContentView: View {
                 // Add a blank page for adding new content when "+" is clicked
                 Spacer().fullScreenCover(isPresented: $presented, content: {
                     VStack {
+                        AddView()
                         Button(action: {
                         presented.toggle()
                         }, label: {
-                            Text("Close")
+                            Text("Cancel")
+                                .padding(10)
+                                .foregroundColor(Color.lightGreen)
+                                .fontWeight(.heavy)
                         })
                     }
                 })
