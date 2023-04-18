@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var viewModel: HobitViewModel
     var body: some View {
         ScrollView{
             VStack {
@@ -37,7 +38,7 @@ struct HomeView: View {
                         VStack(spacing: 7) {
                             //Place routine dashboard here
                             
-                            RoutineDashboard()
+                            RoutineDashboard(routines: viewModel.RoutinePosts)
                         }
                         Spacer()
                     }
@@ -88,6 +89,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        
+        HomeView().environmentObject(HobitViewModel())
     }
 }

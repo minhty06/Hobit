@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2C0BB99529EE3B1100BA0150 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0BB99429EE3B1100BA0150 /* AddView.swift */; };
 		2CC23BBE29EE4E1500EACED7 /* GoalDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC23BBD29EE4E1500EACED7 /* GoalDashboard.swift */; };
+		CA29A5E129EF1FEB00906F64 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29A5E029EF1FEB00906F64 /* Routine.swift */; };
+		CA29A5E829EF29EA00906F64 /* PublicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29A5E729EF29EA00906F64 /* PublicData.swift */; };
+		CA29A5EC29EF2D3900906F64 /* HobitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29A5EB29EF2D3900906F64 /* HobitViewModel.swift */; };
 		CA45FD4529EA550600CB8593 /* RoutineDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA45FD4429EA550600CB8593 /* RoutineDashboard.swift */; };
 		CA45FD4929EA59C500CB8593 /* SubCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA45FD4829EA59C500CB8593 /* SubCircleView.swift */; };
 		CA45FD4B29EA59E200CB8593 /* MainCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA45FD4A29EA59E200CB8593 /* MainCircleView.swift */; };
@@ -27,8 +30,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C0BB99429EE3B1100BA0150 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddView.swift; path = ../AddView.swift; sourceTree = "<group>"; };
+		2C0BB99429EE3B1100BA0150 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		2CC23BBD29EE4E1500EACED7 /* GoalDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDashboard.swift; sourceTree = "<group>"; };
+		CA29A5E029EF1FEB00906F64 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
+		CA29A5E729EF29EA00906F64 /* PublicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicData.swift; sourceTree = "<group>"; };
+		CA29A5EB29EF2D3900906F64 /* HobitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobitViewModel.swift; sourceTree = "<group>"; };
 		CA45FD4429EA550600CB8593 /* RoutineDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDashboard.swift; sourceTree = "<group>"; };
 		CA45FD4829EA59C500CB8593 /* SubCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCircleView.swift; sourceTree = "<group>"; };
 		CA45FD4A29EA59E200CB8593 /* MainCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCircleView.swift; sourceTree = "<group>"; };
@@ -58,6 +64,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA29A5E229EF28A000906F64 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D419D42029E5194A0064E89E /* ContentView.swift */,
+				2C0BB99429EE3B1100BA0150 /* AddView.swift */,
+				D412497A29E7325C008F9B67 /* HomeView.swift */,
+				FB8E1A7529E635EA00AE885E /* HabitDashboard.swift */,
+				CA45FD4429EA550600CB8593 /* RoutineDashboard.swift */,
+				2CC23BBD29EE4E1500EACED7 /* GoalDashboard.swift */,
+				D41ABA7C29EE550E006A0057 /* RoutineForm.swift */,
+				D41ABA7F29EF0614006A0057 /* HabitForm.swift */,
+				D41ABA7A29EE54E3006A0057 /* GoalsForm.swift */,
+				FB8E1A7429E6353200AE885E /* Colors */,
+				FB8E1A6F29E62FDD00AE885E /* Helpers */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA29A5E329EF290100906F64 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA29A5EB29EF2D3900906F64 /* HobitViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		CA29A5E429EF291800906F64 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA29A5E029EF1FEB00906F64 /* Routine.swift */,
+				CA29A5E729EF29EA00906F64 /* PublicData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D419D41229E5194A0064E89E = {
 			isa = PBXGroup;
 			children = (
@@ -78,17 +119,9 @@
 			isa = PBXGroup;
 			children = (
 				D419D41E29E5194A0064E89E /* HobitApp.swift */,
-				D419D42029E5194A0064E89E /* ContentView.swift */,
-				2C0BB99429EE3B1100BA0150 /* AddView.swift */,
-				D412497A29E7325C008F9B67 /* HomeView.swift */,
-				FB8E1A7529E635EA00AE885E /* HabitDashboard.swift */,
-				CA45FD4429EA550600CB8593 /* RoutineDashboard.swift */,
-				2CC23BBD29EE4E1500EACED7 /* GoalDashboard.swift */,
-				D41ABA7C29EE550E006A0057 /* RoutineForm.swift */,
-				D41ABA7F29EF0614006A0057 /* HabitForm.swift */,
-				D41ABA7A29EE54E3006A0057 /* GoalsForm.swift */,
-				FB8E1A7429E6353200AE885E /* Colors */,
-				FB8E1A6F29E62FDD00AE885E /* Helpers */,
+				CA29A5E229EF28A000906F64 /* View */,
+				CA29A5E329EF290100906F64 /* View Model */,
+				CA29A5E429EF291800906F64 /* Model */,
 				D419D42229E5194C0064E89E /* Assets.xcassets */,
 				D419D42429E5194C0064E89E /* Preview Content */,
 			);
@@ -206,7 +239,10 @@
 				CA45FD4929EA59C500CB8593 /* SubCircleView.swift in Sources */,
 				D41ABA7B29EE54E3006A0057 /* GoalsForm.swift in Sources */,
 				D419D41F29E5194A0064E89E /* HobitApp.swift in Sources */,
+				CA29A5E129EF1FEB00906F64 /* Routine.swift in Sources */,
+				CA29A5EC29EF2D3900906F64 /* HobitViewModel.swift in Sources */,
 				CA45FD4529EA550600CB8593 /* RoutineDashboard.swift in Sources */,
+				CA29A5E829EF29EA00906F64 /* PublicData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
