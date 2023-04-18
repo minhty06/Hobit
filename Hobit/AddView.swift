@@ -20,9 +20,9 @@ struct AddView: View {
                 .font(.system(size: 30))
                 .foregroundColor(Color.lightGreen)
  
-            Button(action: {
+            Button(action:  {
                 print("Share tapped!")
-            }) {
+            }){
                 VStack {
                     Text("Routines")
                         .fontWeight(.semibold)
