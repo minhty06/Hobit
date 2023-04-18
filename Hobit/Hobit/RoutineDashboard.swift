@@ -23,13 +23,13 @@ struct RoutineDashboard: View {
                              .foregroundColor(Color.lightGreen)
                              .multilineTextAlignment(.leading)
                              .font(.title)
-                             .padding(.leading, 20.0)
+                             .padding(.leading, 5)
                      }
                      
                      Text("Title detail. More info!")
                          .foregroundColor(Color.white)
                          .multilineTextAlignment(.leading)
-                         .padding(.leading, 20)
+                         .padding(.leading, 5)
                     
                  }
                  Spacer()
@@ -46,7 +46,7 @@ struct RoutineDashboard: View {
                              Text("Routine Title")
                                  .foregroundColor(Color.lightGreen)
                                  .multilineTextAlignment(.leading)
-                                 .padding(.leading, 20.0)
+                                 .padding(.leading, 5)
                              Spacer()
                              SubCircleView(index: index, completionHandler: { subcircleIndex, isComplete in
                                  subcircleCompletion[subcircleIndex] = isComplete
@@ -54,7 +54,6 @@ struct RoutineDashboard: View {
                              }).padding(.horizontal, 10)
                          }
                      }.padding(5)
-                     
                  }
              }
              Spacer()
