@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C0BB99529EE3B1100BA0150 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0BB99429EE3B1100BA0150 /* AddView.swift */; };
+		2CC23BBE29EE4E1500EACED7 /* GoalDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC23BBD29EE4E1500EACED7 /* GoalDashboard.swift */; };
 		CA45FD4529EA550600CB8593 /* RoutineDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA45FD4429EA550600CB8593 /* RoutineDashboard.swift */; };
 		CA45FD4929EA59C500CB8593 /* SubCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA45FD4829EA59C500CB8593 /* SubCircleView.swift */; };
 		CA45FD4B29EA59E200CB8593 /* MainCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA45FD4A29EA59E200CB8593 /* MainCircleView.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		2C0BB99429EE3B1100BA0150 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddView.swift; path = ../AddView.swift; sourceTree = "<group>"; };
+		2CC23BBD29EE4E1500EACED7 /* GoalDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDashboard.swift; sourceTree = "<group>"; };
 		CA45FD4429EA550600CB8593 /* RoutineDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDashboard.swift; sourceTree = "<group>"; };
 		CA45FD4829EA59C500CB8593 /* SubCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCircleView.swift; sourceTree = "<group>"; };
 		CA45FD4A29EA59E200CB8593 /* MainCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCircleView.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				D412497A29E7325C008F9B67 /* HomeView.swift */,
 				FB8E1A7529E635EA00AE885E /* HabitDashboard.swift */,
 				CA45FD4429EA550600CB8593 /* RoutineDashboard.swift */,
+				2CC23BBD29EE4E1500EACED7 /* GoalDashboard.swift */,
 				FB8E1A7429E6353200AE885E /* Colors */,
 				FB8E1A6F29E62FDD00AE885E /* Helpers */,
 				D419D42229E5194C0064E89E /* Assets.xcassets */,
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D419D42129E5194A0064E89E /* ContentView.swift in Sources */,
+				2CC23BBE29EE4E1500EACED7 /* GoalDashboard.swift in Sources */,
 				CA45FD4B29EA59E200CB8593 /* MainCircleView.swift in Sources */,
 				FB8E1A7329E6326200AE885E /* Colors.swift in Sources */,
 				FB8E1A7629E635EA00AE885E /* HabitDashboard.swift in Sources */,
