@@ -11,15 +11,31 @@ class HobitViewModel: ObservableObject {
     
     @Published private var model: PublicData = PublicData()
 
-    var RoutinePosts: [Routine]{
-        model.sampleData
+    var RoutinePosts: Routine{
+        model.routine
+    }
+    var RoutinePostsName: String{
+        return model.routine.name
+    }
+    var RoutinePostsDetail: String{
+        return model.routine.detail
     }
     
     func setRoutineCompletion(atIndex index: Int, toCompletion completion: Bool) {
-        guard index < model.sampleData.count else { return }
-            model.sampleData[index].subcircleCompletion = completion
+        guard index < model.routine.tasks.count else { return }
+        model.routine.tasks[index].subcircleCompletion = completion
         }
     
+    func toggleSubcircleCompletion(at index: Int) {
+        model.routine.tasks[index].subcircleCompletion.toggle()
+    }
+    func addRoutine(_ routine: Routine) {
+        model.routine = routine
+    }
+    
+    
+    
+
 }
 
 

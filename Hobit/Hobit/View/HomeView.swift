@@ -38,7 +38,7 @@ struct HomeView: View {
                         VStack(spacing: 7) {
                             //Place routine dashboard here
                             
-                            RoutineDashboard(routines: viewModel.RoutinePosts)
+                            RoutineDashboard(routine: viewModel.RoutinePosts)
                         }
                         Spacer()
                     }

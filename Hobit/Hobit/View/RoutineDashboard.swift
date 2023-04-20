@@ -10,7 +10,7 @@ struct RoutineDashboard: View {
     @EnvironmentObject var viewModel: HobitViewModel
     @State private var isMainCircleComplete = false
     @State private var showSubcircles = false
-    var routines: [Routine]
+    var routine: Routine
     
     var body: some View {
         VStack {
@@ -20,14 +20,14 @@ struct RoutineDashboard: View {
                         // Toggle the showSubcircles variable when the user clicks on the title
                         showSubcircles.toggle()
                     }) {
-                        Text("Routine Title")
+                        Text(routine.name)
                             .foregroundColor(Color.lightGreen)
                             .multilineTextAlignment(.leading)
                             .font(.title)
                             .padding(.leading, 5)
                     }
                     
-                    Text("Title detail. More info!")
+                    Text(routine.detail)
                         .foregroundColor(Color.white)
                         .multilineTextAlignment(.leading)
                         .padding(.leading, 5)
@@ -42,21 +42,18 @@ struct RoutineDashboard: View {
             Group {
                 if showSubcircles {
                     
-                    ForEach(viewModel.RoutinePosts.indices) { index in
+                    ForEach(routine.tasks.indices) { index in
                         HStack{
-                            Text(viewModel.RoutinePosts[index].name)
+                            Text(routine.tasks[index].taskName)
                                 .foregroundColor(Color.lightGreen)
                                 .multilineTextAlignment(.leading)
                                 .padding(.leading, 5)
                             Spacer()
                             SubCircleView(
-                                index: index,
-                                subcircleCompletion: subcircleCompletionBinding(for: viewModel.RoutinePosts),
-                                routine: viewModel.RoutinePosts[index])
+                                
+                                subcircleCompletion: subcircleCompletionBinding(for: viewModel.RoutinePosts.tasks),
+                                index: index)
                                 .padding(.horizontal, 10)
-                            
-
-
 
                         }
                     }.padding(5)
@@ -69,12 +66,14 @@ struct RoutineDashboard: View {
         
     }
     
-    func subcircleCompletionBinding(for routines: [Routine]) -> Binding<[Bool]> {
+    func subcircleCompletionBinding(for tasks: [Task]) -> Binding<[Bool]> {
+        
         return Binding<[Bool]>(
-            get: { routines.map { $0.subcircleCompletion } },
+            get: { tasks.map { $0.subcircleCompletion } },
             set: { newValue in
                 for (index, completion) in newValue.enumerated() {
                     viewModel.setRoutineCompletion(atIndex: index, toCompletion: completion)
+                    
                 }
                 checkCompletion()
             }
@@ -86,22 +85,24 @@ struct RoutineDashboard: View {
         // Check if all subcircles are complete
         // If yes, set main circle to complete
         // If no, leave main circle incomplete
-        isMainCircleComplete = !viewModel.RoutinePosts.contains(where: { !$0.subcircleCompletion })
+        print("test1")
+        isMainCircleComplete = !viewModel.RoutinePosts.tasks.contains(where: { !$0.subcircleCompletion })
+        
+        
     }
 }
 
 
 struct RoutineDashboard_Previews: PreviewProvider {
     static var previews: some View {
-           let viewModel = HobitViewModel()
-           let sampleData: [Routine] = [
-               Routine(name: "Routine 1", subcircleCompletion: false),
-               Routine(name: "Routine 2", subcircleCompletion: false),
-               Routine(name: "Routine 3", subcircleCompletion: false),
-               Routine(name: "Routine 4", subcircleCompletion: false),
-               Routine(name: "Routine 5", subcircleCompletion: false)
-           ]
-        return RoutineDashboard(routines: sampleData)
-               .environmentObject(viewModel)
+        let routine = Routine(name: "Morning Routine", detail: "My daily morning routine", tasks: [
+            Task(taskName: "Task 1", subcircleCompletion: false),
+            Task(taskName: "Task 2", subcircleCompletion: false),
+            Task(taskName: "Task 3", subcircleCompletion: false)
+        ])
+           
+        return RoutineDashboard(routine: routine)
+               .environmentObject(HobitViewModel())
        }
 }
+

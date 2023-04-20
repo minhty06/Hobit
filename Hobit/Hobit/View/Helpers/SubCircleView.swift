@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct SubCircleView: View {
-    let index: Int
+    
     @Binding var subcircleCompletion: [Bool]
-    let routine: Routine
+    var index: Int
     
     var body: some View {
         ZStack {
             Circle()
-                .fill(routine.subcircleCompletion ? Color.green : Color.gray)
+                .fill(subcircleCompletion[index] ? Color.green : Color.gray) // change this line
                 .frame(width: 30, height: 30)
             Image(systemName: "checkmark")
                 .foregroundColor(.white)
-                .opacity(routine.subcircleCompletion ? 1 : 0)
+                .opacity(subcircleCompletion[index] ? 1 : 0) // change this line
         }
         .onTapGesture {
-            subcircleCompletion[index] = !routine.subcircleCompletion
+            subcircleCompletion[index].toggle() // change this line
         }
     }
     
 }
+
 

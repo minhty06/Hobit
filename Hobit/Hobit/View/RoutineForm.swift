@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct RoutineForm: View {
+    @EnvironmentObject var viewModel: HobitViewModel
     @State private var routineName: String = ""
     @State private var routineDetail: String = ""
     @State private var tasks: [String] = []
@@ -38,8 +39,10 @@ struct RoutineForm: View {
                             Text("Add Task")
                         })
                     }
-                    // Can Pass in a function if needed to do something with data
+                    
                     Button(action: {
+                        let newRoutine = Routine(name: routineName, detail: routineDetail, tasks: tasks.map { Task(taskName: $0, subcircleCompletion: false) })
+                        viewModel.addRoutine(newRoutine)
                     }) {
                         Text("Submit Routine")
                     }
@@ -49,6 +52,7 @@ struct RoutineForm: View {
         }
     }
 }
+
 
 struct RoutineForm_Previews: PreviewProvider {
     static var previews: some View {

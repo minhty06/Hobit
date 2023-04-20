@@ -7,7 +7,14 @@
 
 import Foundation
 
+
 struct Routine {
-    let name: String
+    var name: String
+    var detail: String
+    var tasks: [Task]
+}
+
+struct Task{
+    var taskName: String
     var subcircleCompletion: Bool
 }
