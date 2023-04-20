@@ -48,7 +48,7 @@ struct RoutineDashboard: View {
                             Spacer()
                             SubCircleView(
 
-                                subcircleCompletion: subcircleCompletionBinding(for: viewModel.RoutinePosts.tasks),
+                                subcircleCompletion: subcircleCompletionBinding(for: viewModel.routine.tasks),
                                 index: index)
                                 .padding(.horizontal, 10)
 
@@ -69,7 +69,7 @@ struct RoutineDashboard: View {
             get: { tasks.map { $0.subcircleCompletion } },
             set: { newValue in
                 for (index, completion) in newValue.enumerated() {
-                    viewModel.setRoutineCompletion(atIndex: index, toCompletion: completion)
+                    viewModel.setTaskCompletion(atIndex: index, toCompletion: completion)
 
                 }
                 checkCompletion()
@@ -83,7 +83,7 @@ struct RoutineDashboard: View {
         // If yes, set main circle to complete
         // If no, leave main circle incomplete
         print("test1")
-        isMainCircleComplete = !viewModel.RoutinePosts.tasks.contains(where: { !$0.subcircleCompletion })
+        isMainCircleComplete = !viewModel.routine.tasks.contains(where: { !$0.subcircleCompletion })
 
 
     }
@@ -92,14 +92,14 @@ struct RoutineDashboard: View {
 
 struct RoutineDashboard_Previews: PreviewProvider {
     static var previews: some View {
-        let routine = Routine(name: "Morning Routine", detail: "My daily morning routine", tasks: [
+        let routine = Routine(routineName: "Morning Routine", routineDetails: "My daily morning routine", tasks: [
             Task(taskName: "Task 1", subcircleCompletion: false),
             Task(taskName: "Task 2", subcircleCompletion: false),
             Task(taskName: "Task 3", subcircleCompletion: false)
         ])
 
         return RoutineDashboard(routine: routine)
-               .environmentObject(HobitViewModel())
+            .environmentObject(RoutineViewModel(routine: routine))
        }
 }
 

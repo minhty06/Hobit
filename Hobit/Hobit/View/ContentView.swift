@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = HobitViewModel()
+   // @StateObject var viewModel = HobitViewModel()
     
     @State var selectionIndex = 0
     @State var presented = false

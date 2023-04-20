@@ -15,7 +15,7 @@ struct PublicData {
         var task2 = Task(taskName: "Task 2", subcircleCompletion: false)
         var task3 = Task(taskName: "Task 3", subcircleCompletion: false)
 
-        routine = Routine(name: "Morning Routine", detail: "My daily morning routine", tasks: [task1, task2, task3])
+        routine = Routine(routineName: "Morning Routine", routineDetails: "My daily morning routine", tasks: [task1, task2, task3])
     }
 }
 

@@ -62,6 +62,9 @@ class RoutineViewModel: ObservableObject {
         // If no, leave main circle incomplete
         return !routine.tasks.contains(where: { !$0.subcircleCompletion })
     }
+    func addRoutine(_ routine: Routine) {
+         self.routine = routine
+    }
 }
 
 
