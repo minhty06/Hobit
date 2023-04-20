@@ -15,14 +15,14 @@ struct HabitDashboard: View {
                         .foregroundColor(Color.lightGreen)
                         .multilineTextAlignment(.leading)
                         .font(.title)
-                        .padding(.leading, 20.0)
+                        .padding([.leading,.top], 15)
                 
                     
                     
-                    Text("Title detail. More info!")
+                    Text("Title detail. More info! If this were a really long paragraph that would be crazyand i think it adapts properly if needed or not shit that looks bad unless")
                         .foregroundColor(Color.white)
                         .multilineTextAlignment(.leading)
-                        .padding(.leading, 20)
+                        .padding([.leading,.bottom], 15)
                 }
                 Spacer()
                 ProgressCircle()
