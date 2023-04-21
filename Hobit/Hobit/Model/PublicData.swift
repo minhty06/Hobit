@@ -11,9 +11,9 @@ struct PublicData {
     var routine: Routine
     
     init() {
-        var task1 = Task(taskName: "Task 1", subcircleCompletion: false)
-        var task2 = Task(taskName: "Task 2", subcircleCompletion: false)
-        var task3 = Task(taskName: "Task 3", subcircleCompletion: false)
+        let task1 = Task(taskName: "Make Bed", subcircleCompletion: false)
+        let task2 = Task(taskName: "Brush Teeth", subcircleCompletion: false)
+        let task3 = Task(taskName: "Make Coffee", subcircleCompletion: false)
 
         routine = Routine(routineName: "Morning Routine", routineDetails: "My daily morning routine", tasks: [task1, task2, task3])
     }
