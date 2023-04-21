@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-   // @StateObject var viewModel = HobitViewModel()
+    @StateObject private var viewModel = RoutineViewModel(routine: sampleRoutine)
     
     @State var selectionIndex = 0
     @State var presented = false
@@ -109,6 +109,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(RoutineViewModel(routine: sampleRoutine))
     }
 }
