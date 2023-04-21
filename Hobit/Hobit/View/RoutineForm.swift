@@ -46,6 +46,7 @@ struct RoutineForm: View {
                     }) {
                         Text("Submit Routine")
                     }
+                    
                 }
             }
             .navigationTitle("Routine Form")
