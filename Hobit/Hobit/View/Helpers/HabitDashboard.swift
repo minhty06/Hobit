@@ -69,8 +69,8 @@ struct HabitDashboard: View {
                 }
             }.padding(.bottom)
         }
-        .background(
-            RoundedRectangle(cornerRadius: 20))
+        .background(Color.darkGreen,
+                    in: RoundedRectangle(cornerRadius: 20))
     }
 }
 
