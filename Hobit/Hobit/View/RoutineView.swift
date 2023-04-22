@@ -32,7 +32,9 @@ struct RoutineView: View {
                     VStack {
                         VStack(spacing: 7) {
                             //Place routine dashboard here
-                            RoutineDashboard(routine: Routine())
+                            ForEach(viewModel.model.routineList) { routine in
+                                RoutineDashboard(routine: routine)
+                            }
                         }
                         Spacer()
                     }
@@ -45,6 +47,12 @@ struct RoutineView: View {
 
 struct RoutineView_Previews: PreviewProvider {
     static var previews: some View {
-        RoutineView()
+        let routine = Routine(routineName: "Morning Routine", routineDetails: "My daily morning routine", tasks: [
+            Task(taskName: "Task 1", subcircleCompletion: false),
+            Task(taskName: "Task 2", subcircleCompletion: false),
+            Task(taskName: "Task 3", subcircleCompletion: false)
+        ])
+
+        RoutineView().environmentObject(RoutineViewModel(routine: routine))
     }
 }
