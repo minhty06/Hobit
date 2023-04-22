@@ -49,10 +49,7 @@ struct ContentView: View {
                     .environmentObject(viewModel)
                 case 1:
                     NavigationView {
-                        VStack {
-                            Text("Page 2: shows the full list of routines")
-                        }
-                        .navigationTitle("Routines")
+                        RoutineView()
                     }
                     .environmentObject(viewModel)
                 case 2:
@@ -62,18 +59,12 @@ struct ContentView: View {
                     .environmentObject(viewModel)
                 case 3:
                     NavigationView {
-                        VStack {
-                            Text("Page 3: shows the full list of habits")
-                        }
-                        .navigationTitle("Habits")
+                        HabitView()
                     }
                     .environmentObject(viewModel)
                 default:
                     NavigationView {
-                        VStack {
-                            Text("Page 4: shows the full list of goals")
-                        }
-                        .navigationTitle("Goals")
+                        GoalView()
                     }
                     .environmentObject(viewModel)
                 }
