@@ -40,7 +40,6 @@ struct HomeView: View {
                             ForEach(viewModel.model.routineList) { routine in
                                 RoutineDashboard(routine: routine)
                             }
-
                         }
                         Spacer()
                     }
