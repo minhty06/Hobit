@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HabitDashboard: View {
-    @EnvironmentObject var viewModel: HobitViewModel
+    @EnvironmentObject var viewModel: RoutineViewModel
     @State private var isMainCircleComplete = false
     
     @State private var showSubcircles = false
@@ -76,13 +76,13 @@ struct HabitDashboard: View {
 
 struct HabitDashboard_Previews: PreviewProvider {
     static var previews: some View {
-        let routine = Routine(name: "Morning Routine", detail: "My daily morning routine", tasks: [
+        let routine = Routine(routineName: "Morning Routine", routineDetails: "My daily morning routine", tasks: [
             Task(taskName: "Task 1", subcircleCompletion: true),
             Task(taskName: "Task 2", subcircleCompletion: true),
             Task(taskName: "Task 3", subcircleCompletion: false)
         ])
         
-        return HabitDashboard(routine: routine)
-            .environmentObject(HobitViewModel())
+        return RoutineDashboard(routine: routine)
+            .environmentObject(RoutineViewModel(routine: routine))
     }
 }
