@@ -56,7 +56,7 @@ struct HomeView: View {
                             .foregroundColor(.primary)
                         VStack(spacing: 7) {
                             //Element here
-                            HabitDashboard(routine: viewModel.RoutinePosts)
+                            HabitDashboard(routine: Routine())
                         }
                         Spacer()
                     }
