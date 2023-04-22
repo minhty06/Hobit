@@ -8,34 +8,81 @@
 import SwiftUI
 
 struct HabitDashboard: View {
-    var body: some View {
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Habit Title")
-                        .foregroundColor(Color.lightGreen)
-                        .multilineTextAlignment(.leading)
-                        .font(.title)
-                        .padding(.leading, 20.0)
-                
-                    
-                    
-                    Text("Title detail. More info!")
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.leading)
-                        .padding(.leading, 20)
-                }
-                Spacer()
-                ProgressCircle()
-                    .padding(20)
-            }
-                .background(
-                    RoundedRectangle(cornerRadius: 20))
+    @EnvironmentObject var viewModel: HobitViewModel
+    @State private var isMainCircleComplete = false
+    
+    @State private var showSubcircles = false
 
+    @State private var showDetail = false
+    var routine: Routine
+    
+    let rows = [
+        GridItem(.adaptive(minimum: 50))
+    ]
+    var body: some View {
+        VStack (alignment: .leading){
+            Button(action: {
+                // Toggle the showSubcircles variable when the user clicks on the title
+                showDetail.toggle()
+            }) {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Habit Title")
+                            .foregroundColor(Color.lightGreen)
+                            .multilineTextAlignment(.leading)
+                            .font(.title)
+                            .padding([.leading,.top], 15)
+                        
+                        
+                        
+                        Text("Title detail. More info! If this were a really long paragraph that would be crazyand i think it adapts properly if needed or not shit that looks bad unless")
+                            .foregroundColor(Color.white)
+                            .multilineTextAlignment(.leading)
+                            .padding([.leading,.bottom], 15)
+                    }
+                    Spacer()
+                    ProgressCircle()
+                        .padding(20)
+                }
+
+            }
+            Group {
+                if showDetail {
+                    
+                    LazyHGrid(rows: rows,
+                              alignment: .top, spacing: 5){
+                        ForEach(routine.tasks.indices) { index in
+                            if routine.tasks[index].subcircleCompletion {
+                                Circle()
+                                    .foregroundColor(Color.lightGreen)
+                                    .frame(width: 10, height: 10)
+                            } else {
+                                Circle()
+                                    .foregroundColor(Color.lightGrey)
+                                    .frame(width: 10, height: 10)
+                            }
+                            
+                            
+                        }.padding(5)
+                    }.padding(.leading)
+        
+                }
+            }.padding(.bottom)
+        }
+        .background(
+            RoundedRectangle(cornerRadius: 20))
     }
 }
 
 struct HabitDashboard_Previews: PreviewProvider {
     static var previews: some View {
-        HabitDashboard()
+        let routine = Routine(name: "Morning Routine", detail: "My daily morning routine", tasks: [
+            Task(taskName: "Task 1", subcircleCompletion: true),
+            Task(taskName: "Task 2", subcircleCompletion: true),
+            Task(taskName: "Task 3", subcircleCompletion: false)
+        ])
+        
+        return HabitDashboard(routine: routine)
+            .environmentObject(HobitViewModel())
     }
 }

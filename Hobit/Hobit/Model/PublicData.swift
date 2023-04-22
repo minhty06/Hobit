@@ -10,5 +10,3 @@ import SwiftUI
 struct PublicData {
     var routineList: [Routine] = [sampleRoutine,sampleRoutine2]
 }
-
-

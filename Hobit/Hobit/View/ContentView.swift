@@ -46,6 +46,7 @@ struct ContentView: View {
                     NavigationView {
                         HomeView()
                     }
+                    .environmentObject(viewModel)
                 case 1:
                     NavigationView {
                         VStack {
@@ -53,10 +54,12 @@ struct ContentView: View {
                         }
                         .navigationTitle("Routines")
                     }
+                    .environmentObject(viewModel)
                 case 2:
                     NavigationView {
                         HomeView()
                     }
+                    .environmentObject(viewModel)
                 case 3:
                     NavigationView {
                         VStack {
@@ -64,6 +67,7 @@ struct ContentView: View {
                         }
                         .navigationTitle("Habits")
                     }
+                    .environmentObject(viewModel)
                 default:
                     NavigationView {
                         VStack {
@@ -71,6 +75,7 @@ struct ContentView: View {
                         }
                         .navigationTitle("Goals")
                     }
+                    .environmentObject(viewModel)
                 }
             }
             
