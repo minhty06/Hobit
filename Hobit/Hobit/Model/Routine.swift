@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct Routine: Identifiable {
     var id: UUID = UUID()
     var routineName: String = ""
@@ -30,6 +31,19 @@ let sampleRoutine = Routine(
     routineName: "Morning Routine",
     routineDetails: "My morning routine",
     tasks: sampleTasks,
+    newTask: ""
+)
+
+let sampleTasks2 = [
+    Task(taskName: "Make Bed2", subcircleCompletion: false),
+    Task(taskName: "Brush Teeth2", subcircleCompletion: true),
+    Task(taskName: "Make Coffee2", subcircleCompletion: false)
+]
+
+let sampleRoutine2 = Routine(
+    routineName: "Morning Routine2",
+    routineDetails: "My morning routine2",
+    tasks: sampleTasks2,
     newTask: ""
 )
 

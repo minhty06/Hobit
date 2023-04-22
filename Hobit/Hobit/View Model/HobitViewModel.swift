@@ -39,7 +39,7 @@ import Foundation
 
 
 class RoutineViewModel: ObservableObject {
-    
+    @Published var model: PublicData = PublicData()
     @Published var routine: Routine
     
     init(routine: Routine) {
@@ -63,8 +63,9 @@ class RoutineViewModel: ObservableObject {
         return !routine.tasks.contains(where: { !$0.subcircleCompletion })
     }
     func addRoutine(_ routine: Routine) {
-         self.routine = routine
+        model.routineList.append(routine)
     }
+
 }
 
 

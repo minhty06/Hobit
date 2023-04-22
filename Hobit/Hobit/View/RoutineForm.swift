@@ -14,6 +14,7 @@ struct RoutineForm: View {
     @State private var routineDetail: String = ""
     @State private var tasks: [String] = []
     @State private var newTask: String = ""
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
@@ -41,8 +42,11 @@ struct RoutineForm: View {
                     }
                     
                     Button(action: {
+                        tasks.append(newTask)
                         let newRoutine = Routine(routineName: routineName, routineDetails: routineDetail, tasks: tasks.map { Task(taskName: $0, subcircleCompletion: false) })
+                        print(newRoutine)
                         viewModel.addRoutine(newRoutine)
+                        presentationMode.wrappedValue.dismiss()
                     }) {
                         Text("Submit Routine")
                     }
