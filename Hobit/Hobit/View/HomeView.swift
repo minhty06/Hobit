@@ -70,7 +70,7 @@ struct HomeView: View {
                             .font(.title2.weight(.medium))
                             .foregroundColor(.primary)
                         VStack(spacing: 7) {
-                            GoalDashboard()
+                            GoalDashboard(routine: Routine())
                         }
                         Spacer()
                     }
