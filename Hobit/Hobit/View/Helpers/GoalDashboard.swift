@@ -36,7 +36,7 @@ struct GoalDashboard: View {
                         
                         
                         
-                        Text("Till Dec 31, 2024. Tap to see...")
+                        Text("Till Dec 31, 2024. Tap to see more...")
                             .foregroundColor(Color.white)
                             .multilineTextAlignment(.leading)
                             .padding([.leading,.bottom], 15)
