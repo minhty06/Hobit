@@ -35,7 +35,7 @@ struct HabitDashboard: View {
                         
                         
                         
-                        Text("10pm daily, tap to see more")
+                        Text("10pm daily. Tap to see more...")
                             .foregroundColor(Color.white)
                             .multilineTextAlignment(.leading)
                             .padding([.leading,.bottom], 15)
