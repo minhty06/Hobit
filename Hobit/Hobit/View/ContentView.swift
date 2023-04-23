@@ -26,7 +26,7 @@ struct ContentView: View {
             // Content
             ZStack {
                 
-                // Add a blank page for adding new content when "+" is clicked
+                // Add a page for adding new content when "+" is clicked
                 Spacer().fullScreenCover(isPresented: $presented, content: {
                     VStack {
                         AddView()
@@ -69,6 +69,8 @@ struct ContentView: View {
                     .environmentObject(viewModel)
                 }
             }
+            
+            // Use if... else to customize the look of "+"
             
             HStack {
                 ForEach(0..<5, id: \.self) { number in
