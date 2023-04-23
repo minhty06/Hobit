@@ -6,74 +6,78 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct GoalDashboard: View {
-//     @State private var subcircleCompletion = [false, false, false, false, false]
-//     @State private var isMainCircleComplete = false
-//     @State private var showSubcircles = false
-     
-     var body: some View {
-         VStack {
-//             HStack {
-//                 VStack(alignment: .leading) {
-//                     Button(action: {
-//                         // Toggle the showSubcircles variable when the user clicks on the title
-//                         showSubcircles.toggle()
-//                     }) {
-//                         Text("Goal Title")
-//                             .foregroundColor(Color.lightGreen)
-//                             .multilineTextAlignment(.leading)
-//                             .font(.title)
-//                             .padding(.leading, 5)
-//                     }
-//
-//                     Text("Title detail. More info!")
-//                         .foregroundColor(Color.white)
-//                         .multilineTextAlignment(.leading)
-//                         .padding(.leading, 5)
-//                 }
-//                 Spacer()
-//                 MainCircleView(isComplete: isMainCircleComplete)
-//                     .padding()
-//
-                 
-             }
-             
-//             Group {
-//                 if showSubcircles {
-//
-//                     ForEach(0..<subcircleCompletion.count) { index in
-//                         HStack{
-//                             Text("Routine Title")
-//                                 .foregroundColor(Color.lightGreen)
-//                                 .multilineTextAlignment(.leading)
-//                                 .padding(.leading, 5)
-//                             Spacer()
-//                             SubCircleView(index: index, completionHandler: { subcircleIndex, isComplete in
-//                                 subcircleCompletion[subcircleIndex] = isComplete
-//                                 checkCompletion()
-//                             }).padding(.horizontal, 10)
-//                         }
-//                     }.padding(5)
-//                 }
-//             }
-//             Spacer()
-//         }.padding()
-//         .background(
-//             RoundedRectangle(cornerRadius: 20))
-//
-     }
-//
-//     private func checkCompletion() {
-//         // Check if all subcircles are complete
-//         // If yes, set main circle to complete
-//         // If no, leave main circle incomplete
-//         isMainCircleComplete = !subcircleCompletion.contains(false)
-//     }
-//
+    @EnvironmentObject var viewModel: RoutineViewModel
+    @State private var isMainCircleComplete = false
+    
+    @State private var showSubcircles = false
+
+    @State private var showDetail = false
+    var routine: Routine
+    
+    let rows = [
+        GridItem(.adaptive(minimum: 50))
+    ]
+    var body: some View {
+        VStack (alignment: .leading){
+            Button(action: {
+                // Toggle the showSubcircles variable when the user clicks on the title
+                showDetail.toggle()
+            }) {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Habit Title")
+                            .foregroundColor(Color.lightGreen)
+                            .multilineTextAlignment(.leading)
+                            .font(.title)
+                            .padding([.leading,.top], 15)
+                        
+                        
+                        
+                        Text("Title detail. More info!")
+                            .foregroundColor(Color.white)
+                            .multilineTextAlignment(.leading)
+                            .padding([.leading,.bottom], 15)
+                    }
+                    Spacer()
+                    ProgressCircle()
+                        .padding(20)
+                }
+
+            }
+            Group {
+                if showDetail {
+                    
+                    LazyHGrid(rows: rows,
+                              alignment: .top, spacing: 5){
+                        ForEach(routine.tasks.indices) { index in
+                            if routine.tasks[index].subcircleCompletion {
+                                Circle()
+                                    .foregroundColor(Color.lightGreen)
+                                    .frame(width: 10, height: 10)
+                            } else {
+                                Circle()
+                                    .foregroundColor(Color.lightGrey)
+                                    .frame(width: 10, height: 10)
+                            }
+                            
+                            
+                        }.padding(5)
+                    }.padding(.leading)
+        
+                }
+            }.padding(.bottom)
+        }
+        .background(Color.darkGreen,
+                    in: RoundedRectangle(cornerRadius: 20))
+    }
 }
 
 struct GoalDashboard_Previews: PreviewProvider {
     static var previews: some View {
-        GoalDashboard()
+        GoalDashboard(routine: Routine())
     }
 }
+
