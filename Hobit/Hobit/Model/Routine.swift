@@ -29,7 +29,7 @@ let sampleTasks = [
 
 let sampleRoutine = Routine(
     routineName: "Good Morning",
-    routineDetails: "Tap to see all morning routines",
+    routineDetails: "Tap to see all morning routines...",
     tasks: sampleTasks,
     newTask: ""
 )
@@ -42,7 +42,7 @@ let sampleTasks2 = [
 
 let sampleRoutine2 = Routine(
     routineName: "Good Evening",
-    routineDetails: "Tap to see all evening routines",
+    routineDetails: "Tap to see all evening routines...",
     tasks: sampleTasks2,
     newTask: ""
 )
