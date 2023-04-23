@@ -35,6 +35,34 @@ struct ProgressCircle: View {
     }
 }
 
+struct ProgressCircle2: View {
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(
+                    Color.lightGrey.opacity(0.5),
+                    lineWidth: 10
+                )
+            Circle()
+                .trim(from: 0, to: 4/12)
+                .stroke(
+                    Color.lightGrey,
+                    // 1
+                    style: StrokeStyle(
+                        lineWidth: 10,
+                        lineCap: .round
+                    )
+                )
+                .rotationEffect(.degrees(-90))
+            Text("4/12")
+                .font(.title2)
+                .foregroundColor(Color.white)
+        }
+        .frame(width: 80, height: 80
+        )
+    }
+}
+
 struct ProgressCircle_Previews: PreviewProvider {
     static var previews: some View {
         ProgressCircle()
