@@ -17,15 +17,15 @@ struct HabitForm: View {
         NavigationView {
             VStack {
                 Form {
-                    Section(header: Text("Habit Name")) {
-                        TextField("Enter Habit name", text: $HabitName)
+                    Section(header: Text("Name")) {
+                        TextField("Enter habit's name", text: $HabitName)
                     }
                     
-                    Section(header: Text("Goal Details")) {
-                        TextField("Enter Habit details", text: $HabitDetail)
+                    Section(header: Text("Details")) {
+                        TextField("Enter habit's details", text: $HabitDetail)
                     }
                     
-                    Section(header: Text("Habit Duration")) {
+                    Section(header: Text("Duration")) {
                         Stepper(value: $HabitDuration, in: 1...30) {
                             Text("\(HabitDuration) days")
                         }
@@ -33,11 +33,11 @@ struct HabitForm: View {
                     // Can Pass in a function if needed to do something with data
                     Button(action: {
                     }){
-                        Text("Submit Habit")
+                        Text("Save")
                     }
                 }
             }
-            .navigationTitle("Habit Form")
+            .navigationTitle("New Habit")
         }
     }
 }
