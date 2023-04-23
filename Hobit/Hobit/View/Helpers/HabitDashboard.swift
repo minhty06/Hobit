@@ -27,7 +27,7 @@ struct HabitDashboard: View {
             }) {
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("Habit Title")
+                        Text("Bedtime Reading")
                             .foregroundColor(Color.lightGreen)
                             .multilineTextAlignment(.leading)
                             .font(.title)
@@ -35,7 +35,7 @@ struct HabitDashboard: View {
                         
                         
                         
-                        Text("Title detail. More info!")
+                        Text("10pm daily, tap to see more")
                             .foregroundColor(Color.white)
                             .multilineTextAlignment(.leading)
                             .padding([.leading,.bottom], 15)
