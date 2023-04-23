@@ -19,12 +19,12 @@ struct GoalsForm: View {
         NavigationView {
             VStack {
                 Form {
-                    Section(header: Text("Goal Name")) {
-                        TextField("Enter goal name", text: $goalName)
+                    Section(header: Text("Name")) {
+                        TextField("Enter goal's name", text: $goalName)
                     }
                     
                     Section(header: Text("Goal Details")) {
-                        TextField("Enter goal details", text: $goalDetail)
+                        TextField("Enter goal's details", text: $goalDetail)
                     }
                     
                     Section(header: Text("Goal Duration")) {
@@ -35,11 +35,11 @@ struct GoalsForm: View {
                     // Can Pass in a function if needed to do something with data
                     Button(action: {
                     }){
-                        Text("Submit Goal")
+                        Text("Save")
                     }
                 }
             }
-            .navigationTitle("Goals Form")
+            .navigationTitle("New Goal")
         }
     }
 }
