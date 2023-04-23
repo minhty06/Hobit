@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var viewModel: RoutineViewModel
+    
     var body: some View {
         ScrollView{
             VStack {
