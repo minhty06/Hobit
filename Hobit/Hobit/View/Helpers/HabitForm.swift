@@ -12,6 +12,8 @@ struct HabitForm: View {
     @State private var HabitDetail: String = ""
     //Default days for a good habit is 27
     @State private var HabitDuration: Int = 27
+    @State private var tasks: [String] = []
+    @State private var newTask: String = ""
     
     var body: some View {
         NavigationView {
@@ -30,7 +32,18 @@ struct HabitForm: View {
                             Text("\(HabitDuration) days")
                         }
                     }
-                    // Can Pass in a function if needed to do something with data
+                    
+                    // Placeholder for future feature: Reminder
+                    
+                    Section(header: Text("Reminders")) {
+                        Button(action: {
+                            tasks.append(newTask)
+                            newTask = ""
+                        }, label: {
+                            Text("Add Reminder")
+                        })
+                    }
+                    
                     Button(action: {
                     }){
                         Text("Save")
