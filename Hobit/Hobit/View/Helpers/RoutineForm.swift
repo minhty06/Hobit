@@ -9,12 +9,13 @@
 import SwiftUI
 
 struct RoutineForm: View {
-    @EnvironmentObject var viewModel: RoutineViewModel
+    
     @State private var routineName: String = ""
     @State private var routineDetail: String = ""
     @State private var tasks: [String] = []
     @State private var newTask: String = ""
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var viewModel: RoutineViewModel
     
     var body: some View {
         NavigationView {

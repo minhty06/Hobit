@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddView: View {
- 
+    @StateObject var routineViewModel = RoutineViewModel(routine: Routine())
     var body: some View {
  
         NavigationStack {
@@ -21,7 +21,7 @@ struct AddView: View {
                 .foregroundColor(Color.black)
  
             // Routine
-            NavigationLink(destination: RoutineForm()){
+            NavigationLink(destination: RoutineForm().environmentObject(routineViewModel)){
                 VStack {
                     Text("Routines")
                         .fontWeight(.semibold)
