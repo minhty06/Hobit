@@ -29,6 +29,7 @@ struct RoutineForm: View {
                         TextField("Enter routine's details", text: $routineDetail)
                     }
                     
+                    
                     Section(header: Text("Tasks")) {
                         ForEach(tasks, id: \.self) { task in
                             Text(task)
@@ -39,6 +40,17 @@ struct RoutineForm: View {
                             newTask = ""
                         }, label: {
                             Text("Add Task")
+                        })
+                    }
+                    
+                    // Placeholder for future feature: Reminder
+                    
+                    Section(header: Text("Reminders")) {
+                        Button(action: {
+                            tasks.append(newTask)
+                            newTask = ""
+                        }, label: {
+                            Text("Add Reminder")
                         })
                     }
                     
