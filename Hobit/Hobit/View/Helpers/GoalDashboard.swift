@@ -28,7 +28,7 @@ struct GoalDashboard: View {
             }) {
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("Habit Title")
+                        Text("1 Book Every Month")
                             .foregroundColor(Color.lightGreen)
                             .multilineTextAlignment(.leading)
                             .font(.title)
@@ -36,13 +36,13 @@ struct GoalDashboard: View {
                         
                         
                         
-                        Text("Title detail. More info!")
+                        Text("Till Dec 31, 2024. Tap to see...")
                             .foregroundColor(Color.white)
                             .multilineTextAlignment(.leading)
                             .padding([.leading,.bottom], 15)
                     }
                     Spacer()
-                    ProgressCircle()
+                    ProgressCircle2()
                         .padding(20)
                 }
 
