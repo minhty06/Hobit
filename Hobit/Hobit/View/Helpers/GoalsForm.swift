@@ -1,8 +1,8 @@
 //
-//  GoalsForm.swift
+//  AddView.swift
 //  Hobit
 //
-//  Created by Minh Ton on 4/17/23.
+//  Created by Han Gao on 4/17/23.
 //
 
 import SwiftUI
