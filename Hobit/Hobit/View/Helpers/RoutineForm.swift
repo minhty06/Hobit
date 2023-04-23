@@ -21,15 +21,15 @@ struct RoutineForm: View {
         NavigationView {
             VStack {
                 Form {
-                    Section(header: Text("Routine Name")) {
-                        TextField("Enter routine name", text: $routineName)
+                    Section(header: Text("Name")) {
+                        TextField("Enter routine's name", text: $routineName)
                     }
                     
                     Section(header: Text("Details")) {
-                        TextField("Enter Detail", text: $routineDetail)
+                        TextField("Enter routine's details", text: $routineDetail)
                     }
                     
-                    Section(header: Text("Routine Tasks")) {
+                    Section(header: Text("Tasks")) {
                         ForEach(tasks, id: \.self) { task in
                             Text(task)
                         }
@@ -49,12 +49,12 @@ struct RoutineForm: View {
                         viewModel.addRoutine(newRoutine)
                         presentationMode.wrappedValue.dismiss()
                     }) {
-                        Text("Submit Routine")
+                        Text("Save")
                     }
                     
                 }
             }
-            .navigationTitle("Routine Form")
+            .navigationTitle("New Routine")
         }
     }
 }
