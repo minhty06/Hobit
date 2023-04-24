@@ -4,6 +4,7 @@ import SwiftUI
 import Foundation
 
 class RoutineViewModel: ObservableObject {
+    
     @Published var model: PublicData = PublicData()
     
     var routine: [Routine] {
@@ -31,9 +32,9 @@ class RoutineViewModel: ObservableObject {
 //        // If no, leave main circle incomplete
 //        return !routine.tasks.contains(where: { !$0.completed })
 //    }
-//    func addRoutine(_ routine: Routine) {
-//        model.routineList.append(routine)
-//    }
+    func addRoutine(_ routine: Routine) {
+        model.routineList.append(routine)
+    }
 
 }
 

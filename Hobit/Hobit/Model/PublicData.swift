@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PublicData {
+    
     var routineList: [Routine] = [
         Routine(routineName: "Morning", routineDetails: "Tap to see all morning routines...", tasks: [
             Task(taskName: "Make Bed", completed: false),
@@ -21,7 +22,11 @@ struct PublicData {
             Task(taskName: "Moisturize", completed: false),
             Task(taskName: "Shower", completed: true)
         ])
-    ]
+    ]{
+        didSet {
+                    print("Routine list updated. New count: \(routineList)")
+                }
+    }
     
     mutating func toggleTaskCompletion(in routine: Routine, for task: Task) {
         guard let routineIndex = routineList.firstIndex(where: { $0.id == routine.id }),

@@ -39,7 +39,7 @@ struct HomeView: View {
                         VStack(spacing: 7) {
                             //Place routine dashboard here
                             ForEach(viewModel.model.routineList) { routine in
-//                                RoutineDashboard(routine: routine)
+                                RoutineDashboard(routine: routine)
                             }
                         }
                         Spacer()
