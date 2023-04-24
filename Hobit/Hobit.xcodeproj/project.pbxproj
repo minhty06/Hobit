@@ -27,6 +27,7 @@
 		D41ABA7B29EE54E3006A0057 /* GoalsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41ABA7A29EE54E3006A0057 /* GoalsForm.swift */; };
 		D41ABA7D29EE550E006A0057 /* RoutineForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41ABA7C29EE550E006A0057 /* RoutineForm.swift */; };
 		D41ABA8029EF0614006A0057 /* HabitForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41ABA7F29EF0614006A0057 /* HabitForm.swift */; };
+		FB06A91F29F612D300915C96 /* TaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB06A91E29F612D300915C96 /* TaskRow.swift */; };
 		FB8E1A7129E62FF700AE885E /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E1A7029E62FF700AE885E /* ProgressCircle.swift */; };
 		FB8E1A7329E6326200AE885E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E1A7229E6326200AE885E /* Colors.swift */; };
 		FB8E1A7629E635EA00AE885E /* HabitDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8E1A7529E635EA00AE885E /* HabitDashboard.swift */; };
@@ -54,6 +55,7 @@
 		D41ABA7A29EE54E3006A0057 /* GoalsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsForm.swift; sourceTree = "<group>"; };
 		D41ABA7C29EE550E006A0057 /* RoutineForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineForm.swift; sourceTree = "<group>"; };
 		D41ABA7F29EF0614006A0057 /* HabitForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitForm.swift; sourceTree = "<group>"; };
+		FB06A91E29F612D300915C96 /* TaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRow.swift; sourceTree = "<group>"; };
 		FB8E1A7029E62FF700AE885E /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
 		FB8E1A7229E6326200AE885E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FB8E1A7529E635EA00AE885E /* HabitDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDashboard.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				D41ABA7F29EF0614006A0057 /* HabitForm.swift */,
 				D41ABA7A29EE54E3006A0057 /* GoalsForm.swift */,
 				FB8E1A7029E62FF700AE885E /* ProgressCircle.swift */,
+				FB06A91E29F612D300915C96 /* TaskRow.swift */,
 				CA45FD4829EA59C500CB8593 /* SubCircleView.swift */,
 				CA45FD4A29EA59E200CB8593 /* MainCircleView.swift */,
 			);
@@ -253,6 +256,7 @@
 				CA29A5EC29EF2D3900906F64 /* RoutineViewModel.swift in Sources */,
 				2CC23BC429F46B0A00EACED7 /* HabitView.swift in Sources */,
 				CA45FD4529EA550600CB8593 /* RoutineDashboard.swift in Sources */,
+				FB06A91F29F612D300915C96 /* TaskRow.swift in Sources */,
 				2CC23BC629F5AA4400EACED7 /* ProfileView.swift in Sources */,
 				CA29A5E829EF29EA00906F64 /* PublicData.swift in Sources */,
 			);
@@ -383,6 +387,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hobit/Preview Content\"";
+				DEVELOPMENT_TEAM = 7X8X87X3P3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -411,6 +416,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hobit/Preview Content\"";
+				DEVELOPMENT_TEAM = 7X8X87X3P3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

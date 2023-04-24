@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = RoutineViewModel(routine: sampleRoutine)
+    @StateObject private var viewModel = RoutineViewModel()
     
     @State var selectionIndex = 0
     @State var presented = false
@@ -29,7 +29,7 @@ struct ContentView: View {
                 // Add a page for adding new content when "+" is clicked
                 Spacer().fullScreenCover(isPresented: $presented, content: {
                     VStack {
-                        AddView()
+//                        AddView()
                         Button(action: {
                         presented.toggle()
                         }, label: {
@@ -59,12 +59,12 @@ struct ContentView: View {
                     .environmentObject(viewModel)
                 case 3:
                     NavigationView {
-                        HabitView()
+//                        HabitView()
                     }
                     .environmentObject(viewModel)
                 default:
                     NavigationView {
-                        GoalView()
+//                        GoalView()
                     }
                     .environmentObject(viewModel)
                 }
@@ -107,6 +107,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(RoutineViewModel(routine: sampleRoutine))
+        ContentView().environmentObject(RoutineViewModel())
     }
 }

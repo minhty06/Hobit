@@ -39,7 +39,7 @@ struct HomeView: View {
                         VStack(spacing: 7) {
                             //Place routine dashboard here
                             ForEach(viewModel.model.routineList) { routine in
-                                RoutineDashboard(routine: routine)
+//                                RoutineDashboard(routine: routine)
                             }
                         }
                         Spacer()
@@ -56,7 +56,7 @@ struct HomeView: View {
                             .foregroundColor(.primary)
                         VStack(spacing: 7) {
                             //Element here
-                            HabitDashboard(routine: Routine())
+//                            HabitDashboard(routine: Routine())
                         }
                         Spacer()
                     }
@@ -71,7 +71,7 @@ struct HomeView: View {
                             .font(.title2.weight(.medium))
                             .foregroundColor(.primary)
                         VStack(spacing: 7) {
-                            GoalDashboard(routine: Routine())
+//                            GoalDashboard(routine: Routine())
                         }
                         Spacer()
                     }
@@ -92,11 +92,11 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         let routine = Routine(routineName: "Morning Routine", routineDetails: "My daily morning routine", tasks: [
-            Task(taskName: "Task 1", subcircleCompletion: false),
-            Task(taskName: "Task 2", subcircleCompletion: false),
-            Task(taskName: "Task 3", subcircleCompletion: false)
+            Task(taskName: "Task 1", completed: false),
+            Task(taskName: "Task 2", completed: false),
+            Task(taskName: "Task 3", completed: false)
         ])
 
-        HomeView().environmentObject(RoutineViewModel(routine: routine))
+        HomeView().environmentObject(RoutineViewModel())
     }
 }
