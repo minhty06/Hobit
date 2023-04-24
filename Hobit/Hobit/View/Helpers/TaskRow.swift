@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TaskRow: View {
-    @EnvironmentObject var routineViewModel: RoutineViewModel
+    @EnvironmentObject var routineViewModel: HobitViewModel
     var task: Task
     var routine: Routine
     var body: some View {
@@ -41,7 +41,7 @@ struct TaskRow: View {
 }
 
 struct TaskRow_Previews: PreviewProvider {
-    static var routine = RoutineViewModel().routine
+    static var routine = HobitViewModel().routine
     static var previews: some View {
         TaskRow(task: routine[0].tasks[0], routine: routine[0])
     }

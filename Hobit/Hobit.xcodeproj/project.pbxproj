@@ -15,10 +15,11 @@
 		2CC23BC629F5AA4400EACED7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC23BC529F5AA4400EACED7 /* ProfileView.swift */; };
 		CA29A5E129EF1FEB00906F64 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29A5E029EF1FEB00906F64 /* Routine.swift */; };
 		CA29A5E829EF29EA00906F64 /* PublicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29A5E729EF29EA00906F64 /* PublicData.swift */; };
-		CA29A5EC29EF2D3900906F64 /* RoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29A5EB29EF2D3900906F64 /* RoutineViewModel.swift */; };
+		CA29A5EC29EF2D3900906F64 /* HobitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29A5EB29EF2D3900906F64 /* HobitViewModel.swift */; };
 		CA45FD4529EA550600CB8593 /* RoutineDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA45FD4429EA550600CB8593 /* RoutineDashboard.swift */; };
 		CA45FD4929EA59C500CB8593 /* SubCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA45FD4829EA59C500CB8593 /* SubCircleView.swift */; };
 		CA45FD4B29EA59E200CB8593 /* MainCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA45FD4A29EA59E200CB8593 /* MainCircleView.swift */; };
+		CA635D4929F7159300DADDDC /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA635D4829F7159300DADDDC /* Habit.swift */; };
 		D412497B29E7325C008F9B67 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D412497A29E7325C008F9B67 /* HomeView.swift */; };
 		D419D41F29E5194A0064E89E /* HobitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D419D41E29E5194A0064E89E /* HobitApp.swift */; };
 		D419D42129E5194A0064E89E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D419D42029E5194A0064E89E /* ContentView.swift */; };
@@ -42,10 +43,11 @@
 		2CC23BC529F5AA4400EACED7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CA29A5E029EF1FEB00906F64 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		CA29A5E729EF29EA00906F64 /* PublicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicData.swift; sourceTree = "<group>"; };
-		CA29A5EB29EF2D3900906F64 /* RoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineViewModel.swift; sourceTree = "<group>"; };
+		CA29A5EB29EF2D3900906F64 /* HobitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobitViewModel.swift; sourceTree = "<group>"; };
 		CA45FD4429EA550600CB8593 /* RoutineDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDashboard.swift; sourceTree = "<group>"; };
 		CA45FD4829EA59C500CB8593 /* SubCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCircleView.swift; sourceTree = "<group>"; };
 		CA45FD4A29EA59E200CB8593 /* MainCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCircleView.swift; sourceTree = "<group>"; };
+		CA635D4829F7159300DADDDC /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		D412497A29E7325C008F9B67 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D419D41B29E5194A0064E89E /* Hobit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hobit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D419D41E29E5194A0064E89E /* HobitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobitApp.swift; sourceTree = "<group>"; };
@@ -91,7 +93,7 @@
 		CA29A5E329EF290100906F64 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				CA29A5EB29EF2D3900906F64 /* RoutineViewModel.swift */,
+				CA29A5EB29EF2D3900906F64 /* HobitViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				CA29A5E029EF1FEB00906F64 /* Routine.swift */,
+				CA635D4829F7159300DADDDC /* Habit.swift */,
 				CA29A5E729EF29EA00906F64 /* PublicData.swift */,
 			);
 			path = Model;
@@ -243,6 +246,7 @@
 				2CC23BBE29EE4E1500EACED7 /* GoalDashboard.swift in Sources */,
 				CA45FD4B29EA59E200CB8593 /* MainCircleView.swift in Sources */,
 				FB8E1A7329E6326200AE885E /* Colors.swift in Sources */,
+				CA635D4929F7159300DADDDC /* Habit.swift in Sources */,
 				2CC23BC029F4685200EACED7 /* RoutineView.swift in Sources */,
 				2CC23BC229F46AFF00EACED7 /* GoalView.swift in Sources */,
 				FB8E1A7629E635EA00AE885E /* HabitDashboard.swift in Sources */,
@@ -253,7 +257,7 @@
 				D41ABA7B29EE54E3006A0057 /* GoalsForm.swift in Sources */,
 				D419D41F29E5194A0064E89E /* HobitApp.swift in Sources */,
 				CA29A5E129EF1FEB00906F64 /* Routine.swift in Sources */,
-				CA29A5EC29EF2D3900906F64 /* RoutineViewModel.swift in Sources */,
+				CA29A5EC29EF2D3900906F64 /* HobitViewModel.swift in Sources */,
 				2CC23BC429F46B0A00EACED7 /* HabitView.swift in Sources */,
 				CA45FD4529EA550600CB8593 /* RoutineDashboard.swift in Sources */,
 				FB06A91F29F612D300915C96 /* TaskRow.swift in Sources */,

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProgressCircle: View {
+    
     var body: some View {
         ZStack {
             Circle()

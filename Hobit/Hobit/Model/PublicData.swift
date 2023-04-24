@@ -22,11 +22,7 @@ struct PublicData {
             Task(taskName: "Moisturize", completed: false),
             Task(taskName: "Shower", completed: true)
         ])
-    ]{
-        didSet {
-                    print("Routine list updated. New count: \(routineList)")
-                }
-    }
+    ]
     
     mutating func toggleTaskCompletion(in routine: Routine, for task: Task) {
         guard let routineIndex = routineList.firstIndex(where: { $0.id == routine.id }),
@@ -36,5 +32,7 @@ struct PublicData {
         
         routineList[routineIndex].tasks[taskIndex].completed.toggle()
     }
+    
+    var habitList: [Habit]=[Habit(habitName: "Habit Name", habitDetails: "Habit Detail", habitDuration: 24),Habit(habitName: "Habit Name2", habitDetails: "Habit Detail2", habitDuration: 23)]
     
 }

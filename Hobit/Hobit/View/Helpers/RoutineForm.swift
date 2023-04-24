@@ -15,7 +15,7 @@ struct RoutineForm: View {
     @State private var tasks: [String] = []
     @State private var newTask: String = ""
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var viewModel: RoutineViewModel
+    @EnvironmentObject var viewModel: HobitViewModel
     
     var body: some View {
         NavigationView {

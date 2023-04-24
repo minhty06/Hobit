@@ -3,7 +3,7 @@
 import SwiftUI
 import Foundation
 
-class RoutineViewModel: ObservableObject {
+class HobitViewModel: ObservableObject {
     
     @Published var model: PublicData = PublicData()
     
@@ -14,6 +14,16 @@ class RoutineViewModel: ObservableObject {
     func setCompleted(_ routine: Routine, _ task: Task) {
         // set favorite
         model.toggleTaskCompletion(in: routine, for: task)
+    }
+    func addRoutine(_ routine: Routine) {
+        model.routineList.append(routine)
+    }
+
+    var habit: [Habit] {
+        model.habitList
+    }
+    func addHabit(_ habit: Habit) {
+        model.habitList.append(habit)
     }
     
 //    func setTaskCompletion(atIndex index: Int, toCompletion completion: Bool) {
@@ -32,10 +42,7 @@ class RoutineViewModel: ObservableObject {
 //        // If no, leave main circle incomplete
 //        return !routine.tasks.contains(where: { !$0.completed })
 //    }
-    func addRoutine(_ routine: Routine) {
-        model.routineList.append(routine)
-    }
-
+    
 }
 
 

@@ -8,28 +8,30 @@
 import SwiftUI
 
 struct HabitForm: View {
-    @State private var HabitName: String = ""
-    @State private var HabitDetail: String = ""
+    @State private var habitName: String = ""
+    @State private var habitDetail: String = ""
     //Default days for a good habit is 27
-    @State private var HabitDuration: Int = 27
-    @State private var tasks: [String] = []
-    @State private var newTask: String = ""
+    @State private var habitDuration: Int = 27
+//    @State private var tasks: [String] = []
+//    @State private var newTask: String = ""
+    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var viewModel: HobitViewModel
     
     var body: some View {
         NavigationView {
             VStack {
                 Form {
                     Section(header: Text("Name")) {
-                        TextField("Enter habit's name", text: $HabitName)
+                        TextField("Enter habit's name", text: $habitName)
                     }
                     
                     Section(header: Text("Details")) {
-                        TextField("Enter habit's details", text: $HabitDetail)
+                        TextField("Enter habit's details", text: $habitDetail)
                     }
                     
                     Section(header: Text("Duration")) {
-                        Stepper(value: $HabitDuration, in: 1...30) {
-                            Text("\(HabitDuration) days")
+                        Stepper(value: $habitDuration, in: 1...30) {
+                            Text("\(habitDuration) days")
                         }
                     }
                     
@@ -37,17 +39,24 @@ struct HabitForm: View {
                     
                     Section(header: Text("Reminders")) {
                         Button(action: {
-                            tasks.append(newTask)
-                            newTask = ""
+//                            tasks.append(newTask)
+//                            newTask = ""
                         }, label: {
                             Text("Add Reminder")
                         })
                     }
                     
+                    
                     Button(action: {
-                    }){
+                        let newHabit = Habit(habitName: habitName, habitDetails: habitDetail, habitDuration: habitDuration)
+                        
+                        viewModel.addHabit(newHabit)
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
                         Text("Save")
                     }
+                    
+
                 }
             }
             .navigationTitle("New Habit")

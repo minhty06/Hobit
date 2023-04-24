@@ -4,7 +4,7 @@
 import SwiftUI
 
 struct RoutineDashboard: View {
-    @EnvironmentObject var viewModel: RoutineViewModel
+    @EnvironmentObject var viewModel: HobitViewModel
     @State private var isMainCircleComplete = false
     @State private var showSubcircles = false
     var routine: Routine
@@ -56,7 +56,7 @@ struct RoutineDashboard: View {
 
     
     struct RoutineDashboard_Previews: PreviewProvider {
-        static var routine = RoutineViewModel().routine
+        static var routine = HobitViewModel().routine
         static var previews: some View {
             RoutineDashboard(routine: routine[0])
         }
