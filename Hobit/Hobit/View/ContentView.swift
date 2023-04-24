@@ -46,27 +46,27 @@ struct ContentView: View {
                     NavigationView {
                         HomeView()
                     }
-                    .environmentObject(viewModel)
+                //.environmentObject(viewModel)
                 case 1:
                     NavigationView {
                         RoutineView()
                     }
-                    .environmentObject(viewModel)
+                 //   .environmentObject(viewModel)
                 case 2:
                     NavigationView {
                         HomeView()
                     }
-                    .environmentObject(viewModel)
+                //    .environmentObject(viewModel)
                 case 3:
                     NavigationView {
 //                        HabitView()
                     }
-                    .environmentObject(viewModel)
+                //    .environmentObject(viewModel)
                 default:
                     NavigationView {
 //                        GoalView()
                     }
-                    .environmentObject(viewModel)
+               //     .environmentObject(viewModel)
                 }
             }
             
