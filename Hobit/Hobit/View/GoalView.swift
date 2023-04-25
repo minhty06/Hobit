@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GoalView: View {
-    @EnvironmentObject var viewModel: RoutineViewModel
+    @EnvironmentObject var viewModel: HobitViewModel
     var body: some View {
         ScrollView{
             VStack {

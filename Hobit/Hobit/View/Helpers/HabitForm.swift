@@ -8,50 +8,65 @@
 import SwiftUI
 
 struct HabitForm: View {
-    @State private var HabitName: String = ""
-    @State private var HabitDetail: String = ""
+    @State private var habitName: String = ""
+    @State private var habitDetail: String = ""
     //Default days for a good habit is 27
-    @State private var HabitDuration: Int = 27
-    @State private var tasks: [String] = []
-    @State private var newTask: String = ""
-    
+    @State private var habitDuration: Int = 27
+//    @State private var tasks: [String] = []
+//    @State private var newTask: String = ""
+    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var viewModel: HobitViewModel
+
     var body: some View {
-        NavigationView {
-            VStack {
-                Form {
-                    Section(header: Text("Name")) {
-                        TextField("Enter habit's name", text: $HabitName)
-                    }
-                    
-                    Section(header: Text("Details")) {
-                        TextField("Enter habit's details", text: $HabitDetail)
-                    }
-                    
-                    Section(header: Text("Duration")) {
-                        Stepper(value: $HabitDuration, in: 1...30) {
-                            Text("\(HabitDuration) days")
+            
+            NavigationView {
+                VStack {
+                    Form {
+                        Section(header: Text("Name")) {
+                            TextField("Enter habit's name", text: $habitName)
                         }
-                    }
-                    
-                    // Placeholder for future feature: Reminder
-                    
-                    Section(header: Text("Reminders")) {
+                        
+                        Section(header: Text("Details")) {
+                            TextField("Enter habit's details", text: $habitDetail)
+                        }
+                        
+                        Section(header: Text("Duration")) {
+                            Stepper(value: $habitDuration, in: 1...30) {
+                                Text("\(habitDuration) days")
+                            }
+                        }
+                        
+                        // Placeholder for future feature: Reminder
+                        
+                        Section(header: Text("Reminders")) {
+                            Button(action: {
+                                //                            tasks.append(newTask)
+                                //                            newTask = ""
+                            }, label: {
+                                Text("Add Reminder")
+                            })
+                        }
+                        
+                        
                         Button(action: {
-                            tasks.append(newTask)
-                            newTask = ""
-                        }, label: {
-                            Text("Add Reminder")
-                        })
-                    }
-                    
-                    Button(action: {
-                    }){
-                        Text("Save")
+                            var newTasks: [Task] = []
+                            for i in 1...habitDuration {
+                                newTasks.append(Task(taskName: "task\(i)", completed: false))
+                            }
+                            let newHabit = Habit(habitName: habitName, habitDetails: habitDetail, habitDuration: habitDuration, tasks: newTasks)
+                            
+                            viewModel.addHabit(newHabit)
+                            presentationMode.wrappedValue.dismiss()
+                            
+                        }) {
+                            Text("Save")
+                        }
+                        
+                        
                     }
                 }
+                .navigationTitle("New Habit")
             }
-            .navigationTitle("New Habit")
-        }
     }
 }
 

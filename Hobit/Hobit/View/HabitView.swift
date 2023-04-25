@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HabitView: View {
-    @EnvironmentObject var viewModel: RoutineViewModel
+    @EnvironmentObject var viewModel: HobitViewModel
     var body: some View {
         ScrollView{
             VStack {
@@ -31,8 +31,10 @@ struct HabitView: View {
                 VStack(spacing: 40) {
                     VStack {
                         VStack(spacing: 7) {
-                            //Place routine dashboard here
-                            HabitDashboard(routine: Routine())
+                            ForEach(viewModel.model.habitList) { habit in
+                                HabitDashboard(habit: habit)
+                                
+                            }
                         }
                         Spacer()
                     }
@@ -45,6 +47,6 @@ struct HabitView: View {
 
 struct HabitView_Previews: PreviewProvider {
     static var previews: some View {
-        HabitView()
+        HabitView().environmentObject(HobitViewModel())
     }
 }

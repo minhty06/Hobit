@@ -5,7 +5,7 @@
 //  Created by Minh Ton on 4/17/23.
 //
 
-
+//
 import SwiftUI
 
 struct RoutineForm: View {
@@ -15,7 +15,7 @@ struct RoutineForm: View {
     @State private var tasks: [String] = []
     @State private var newTask: String = ""
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var viewModel: RoutineViewModel
+    @EnvironmentObject var viewModel: HobitViewModel
     
     var body: some View {
         NavigationView {
@@ -56,7 +56,7 @@ struct RoutineForm: View {
                     
                     Button(action: {
                         tasks.append(newTask)
-                        let newRoutine = Routine(routineName: routineName, routineDetails: routineDetail, tasks: tasks.map { Task(taskName: $0, subcircleCompletion: false) })
+                        let newRoutine = Routine(routineName: routineName, routineDetails: routineDetail, tasks: tasks.map { Task(taskName: $0, completed: false) })
                         print(newRoutine)
                         viewModel.addRoutine(newRoutine)
                         presentationMode.wrappedValue.dismiss()

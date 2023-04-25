@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = RoutineViewModel(routine: sampleRoutine)
+    @StateObject private var viewModel = HobitViewModel()
     
     @State var selectionIndex = 0
     @State var presented = false
@@ -46,27 +46,27 @@ struct ContentView: View {
                     NavigationView {
                         HomeView()
                     }
-                    .environmentObject(viewModel)
+                //.environmentObject(viewModel)
                 case 1:
                     NavigationView {
                         RoutineView()
                     }
-                    .environmentObject(viewModel)
+                 //   .environmentObject(viewModel)
                 case 2:
                     NavigationView {
                         HomeView()
                     }
-                    .environmentObject(viewModel)
+                //    .environmentObject(viewModel)
                 case 3:
                     NavigationView {
                         HabitView()
                     }
-                    .environmentObject(viewModel)
+                //    .environmentObject(viewModel)
                 default:
                     NavigationView {
                         GoalView()
                     }
-                    .environmentObject(viewModel)
+               //     .environmentObject(viewModel)
                 }
             }
             
@@ -107,6 +107,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(RoutineViewModel(routine: sampleRoutine))
+        ContentView().environmentObject(HobitViewModel())
     }
 }

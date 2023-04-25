@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct HobitApp: App {
+    @StateObject private var viewModel = HobitViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(viewModel)
         }
     }
 }

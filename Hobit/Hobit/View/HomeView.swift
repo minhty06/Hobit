@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var viewModel: RoutineViewModel
+    @EnvironmentObject var viewModel: HobitViewModel
     
     var body: some View {
         ScrollView{
@@ -56,7 +56,10 @@ struct HomeView: View {
                             .foregroundColor(.primary)
                         VStack(spacing: 7) {
                             //Element here
-                            HabitDashboard(routine: Routine())
+                            ForEach(viewModel.model.habitList) { habit in
+                                HabitDashboard(habit: habit)
+                            }
+                            
                         }
                         Spacer()
                     }
@@ -71,7 +74,7 @@ struct HomeView: View {
                             .font(.title2.weight(.medium))
                             .foregroundColor(.primary)
                         VStack(spacing: 7) {
-                            GoalDashboard(routine: Routine())
+//                            GoalDashboard(routine: Routine())
                         }
                         Spacer()
                     }
@@ -92,11 +95,11 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         let routine = Routine(routineName: "Morning Routine", routineDetails: "My daily morning routine", tasks: [
-            Task(taskName: "Task 1", subcircleCompletion: false),
-            Task(taskName: "Task 2", subcircleCompletion: false),
-            Task(taskName: "Task 3", subcircleCompletion: false)
+            Task(taskName: "Task 1", completed: false),
+            Task(taskName: "Task 2", completed: false),
+            Task(taskName: "Task 3", completed: false)
         ])
 
-        HomeView().environmentObject(RoutineViewModel(routine: routine))
+        HomeView().environmentObject(HobitViewModel())
     }
 }

@@ -4,20 +4,17 @@
 //
 //  Created by Lori Merone on 4/11/23.
 //
-
+//
 import SwiftUI
 
 struct HabitDashboard: View {
-    @EnvironmentObject var viewModel: RoutineViewModel
+    @EnvironmentObject var viewModel: HobitViewModel
     @State private var isMainCircleComplete = false
-    
     @State private var showSubcircles = false
-
     @State private var showDetail = false
-    var routine: Routine
-    
-    let rows = [
-        GridItem(.adaptive(minimum: 50))
+    var habit: Habit
+    let columns = [
+        GridItem(.adaptive(minimum: 20),spacing: 3)
     ]
     var body: some View {
         VStack (alignment: .leading){
@@ -27,7 +24,7 @@ struct HabitDashboard: View {
             }) {
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("Bedtime Reading")
+                        Text(habit.habitName)
                             .foregroundColor(Color.lightGreen)
                             .multilineTextAlignment(.leading)
                             .font(.title)
@@ -35,24 +32,24 @@ struct HabitDashboard: View {
                         
                         
                         
-                        Text("10pm daily. Tap to see more...")
+                        Text(habit.habitDetails)
                             .foregroundColor(Color.white)
                             .multilineTextAlignment(.leading)
                             .padding([.leading,.bottom], 15)
                     }
                     Spacer()
-                    ProgressCircle()
+                    ProgressCircle(habit: habit)
                         .padding(20)
                 }
 
             }
             Group {
                 if showDetail {
-                    
-                    LazyHGrid(rows: rows,
-                              alignment: .top, spacing: 5){
-                        ForEach(routine.tasks.indices) { index in
-                            if routine.tasks[index].subcircleCompletion {
+
+                    LazyVGrid(columns: columns,
+                              alignment: .leading, spacing: 5){
+                        ForEach(habit.tasks.indices) { index in
+                            if habit.tasks[index].completed {
                                 Circle()
                                     .foregroundColor(Color.lightGreen)
                                     .frame(width: 10, height: 10)
@@ -61,13 +58,14 @@ struct HabitDashboard: View {
                                     .foregroundColor(Color.lightGrey)
                                     .frame(width: 10, height: 10)
                             }
-                            
-                            
+
+
                         }.padding(5)
-                    }.padding(.leading)
-        
+                    }.padding(10)
+
                 }
             }.padding(.bottom)
+            
         }
         .background(Color.darkGreen,
                     in: RoundedRectangle(cornerRadius: 20))
@@ -76,6 +74,6 @@ struct HabitDashboard: View {
 
 struct HabitDashboard_Previews: PreviewProvider {
     static var previews: some View {
-        HabitDashboard(routine: Routine())
+        HabitDashboard(habit: Habit())
     }
 }
