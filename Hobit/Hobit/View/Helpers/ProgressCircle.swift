@@ -17,7 +17,7 @@ struct ProgressCircle: View {
 
 
     var body: some View {
-        var completedTaskCount = habit.tasks.reduce(1) { count, task in
+        var completedTaskCount = habit.tasks.reduce(0) { count, task in
             if task.completed {
                 return count + 1
             } else {
@@ -25,28 +25,36 @@ struct ProgressCircle: View {
             }
         }
         Button(action: {
+            for (index, task) in habit.tasks.enumerated() {
+                if !task.completed && completedHabit == false {
+                    // Set the first incomplete task to complete
+                    routineViewModel.setCompletedHabit(habit, habit.tasks[index])
+                    break
+                }
+            }
             // Toggle the showSubcircles variable when the user clicks on the title
             completedHabit.toggle()
+            
         }){
             ZStack {
                 if completedHabit {
                     Circle()
                         .stroke(
                             Color.lightGreen.opacity(0.5),
-                            lineWidth: 8
+                            lineWidth: 6
                         )
                     Circle()
-                        .trim(from: 0, to: (CGFloat(completedTaskCount) / CGFloat(habit.habitDuration)))
+                        .trim(from: 0, to: (CGFloat(completedTaskCount) / CGFloat(habit.tasks.count)))
                         .stroke(
                             Color.lightGreen,
                             // 1
                             style: StrokeStyle(
-                                lineWidth: 8,
+                                lineWidth: 6,
                                 lineCap: .round
                             )
                         )
                         .rotationEffect(.degrees(-90))
-                    Text("\(completedTaskCount)/\(habit.habitDuration)")
+                    Text("\(completedTaskCount)/\(habit.tasks.count)")
                         .font(.title2)
                         .foregroundColor(Color.white)
                 }
@@ -54,15 +62,15 @@ struct ProgressCircle: View {
                     Circle()
                         .stroke(
                             Color.lightGrey.opacity(0.5),
-                            lineWidth: 8
+                            lineWidth: 6
                         )
                     Circle()
-                        .trim(from: 0, to: (CGFloat(completedTaskCount) / CGFloat(habit.habitDuration)))
+                        .trim(from: 0, to: (CGFloat(completedTaskCount) / CGFloat(habit.tasks.count)))
                         .stroke(
                             Color.lightGrey,
                             // 1
                             style: StrokeStyle(
-                                lineWidth: 8,
+                                lineWidth: 6,
                                 lineCap: .round
                             )
                         )
@@ -73,7 +81,7 @@ struct ProgressCircle: View {
                         .foregroundColor(Color.white)
                 }
             }
-            .frame(width: 60, height: 60)
+            .frame(width: 65, height: 65)
             
         }
     }

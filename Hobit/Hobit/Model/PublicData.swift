@@ -64,4 +64,14 @@ struct PublicData {
         ])
     ]
     
+    
+    mutating func toggleTaskCompletionHabit(in habit: Habit, for task: Task) {
+        guard let habitIndex = habitList.firstIndex(where: { $0.id == habit.id }),
+              let taskIndex = habitList[habitIndex].tasks.firstIndex(where: { $0.id == task.id }) else {
+            return
+        }
+        
+        habitList[habitIndex].tasks[taskIndex].completed.toggle()
+    }
+    
 }

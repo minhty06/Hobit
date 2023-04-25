@@ -43,28 +43,28 @@ struct HabitDashboard: View {
                 }
 
             }
-//            Group {
-//                if showDetail {
-//
-//                    LazyVGrid(columns: columns,
-//                              alignment: .leading, spacing: 5){
-//                        ForEach(habit.tasks.indices) { index in
-//                            if habit.tasks[index].completed {
-//                                Circle()
-//                                    .foregroundColor(Color.lightGreen)
-//                                    .frame(width: 10, height: 10)
-//                            } else {
-//                                Circle()
-//                                    .foregroundColor(Color.lightGrey)
-//                                    .frame(width: 10, height: 10)
-//                            }
-//
-//
-//                        }.padding(5)
-//                    }.padding(10)
-//
-//                }
-//            }.padding(.bottom)
+            Group {
+                if showDetail {
+
+                    LazyVGrid(columns: columns,
+                              alignment: .leading, spacing: 5){
+                        ForEach(habit.tasks.indices) { index in
+                            if habit.tasks[index].completed {
+                                Circle()
+                                    .foregroundColor(Color.lightGreen)
+                                    .frame(width: 10, height: 10)
+                            } else {
+                                Circle()
+                                    .foregroundColor(Color.lightGrey)
+                                    .frame(width: 10, height: 10)
+                            }
+
+
+                        }.padding(5)
+                    }.padding(10)
+
+                }
+            }.padding(.bottom)
             
         }
         .background(Color.darkGreen,

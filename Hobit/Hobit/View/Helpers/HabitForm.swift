@@ -49,7 +49,11 @@ struct HabitForm: View {
                         
                         
                         Button(action: {
-                            let newHabit = Habit(habitName: habitName, habitDetails: habitDetail, habitDuration: habitDuration)
+                            var newTasks: [Task] = []
+                            for i in 1...habitDuration {
+                                newTasks.append(Task(taskName: "task\(i)", completed: false))
+                            }
+                            let newHabit = Habit(habitName: habitName, habitDetails: habitDetail, habitDuration: habitDuration, tasks: newTasks)
                             
                             viewModel.addHabit(newHabit)
                             presentationMode.wrappedValue.dismiss()

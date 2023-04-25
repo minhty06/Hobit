@@ -26,6 +26,10 @@ class HobitViewModel: ObservableObject {
         model.habitList.append(habit)
     }
     
+    func setCompletedHabit(_ habit: Habit, _ task: Task) {
+        // set favorite
+        model.toggleTaskCompletionHabit(in: habit, for: task)
+    }
 //    func setTaskCompletion(atIndex index: Int, toCompletion completion: Bool) {
 //        routine.tasks[index].completed = completion
 //    }
