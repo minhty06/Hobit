@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddView: View {
-   
+    @StateObject private var viewModel = HobitViewModel()
     var body: some View {
  
         NavigationStack {
@@ -85,7 +85,6 @@ struct AddView: View {
                 .cornerRadius(20)
                 .padding(.horizontal, 20)
             }
- 
         }
         
     }
