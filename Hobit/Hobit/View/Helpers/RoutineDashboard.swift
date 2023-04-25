@@ -10,7 +10,14 @@ struct RoutineDashboard: View {
     var routine: Routine
     
     var body: some View {
-
+        let completedTaskCount = routine.tasks.reduce(0) { count, task in
+            if task.completed {
+                return count + 1
+            } else {
+                return count
+            }
+        }
+        let totalTasks = routine.tasks.count
             VStack {
                 Button(action: {
                     // Toggle the showSubcircles variable when the user clicks on the title
@@ -35,6 +42,18 @@ struct RoutineDashboard: View {
                     //                MainCircleView(isComplete: isMainCircleComplete)
                     //                    .padding()
                     
+                    if totalTasks == completedTaskCount {
+                        Circle()
+                            .frame(width: 30, height: 30)
+                            .padding(.horizontal, 10)
+                            .foregroundColor(.lightGreen)
+                    } else {
+                        Circle()
+                            .frame(width: 30, height: 30)
+                            .padding(.horizontal, 10)
+                            .foregroundColor(.lightGrey)
+                    }
+                    
                 }
             }
                 Group {
@@ -47,11 +66,13 @@ struct RoutineDashboard: View {
                     
                 }                
             }.padding()
-                .background(Color.darkGreen,
+            .background(Color.darkGreen,
                             in: RoundedRectangle(cornerRadius: 20))
-            
+        
         }
+            
     }
+
 
 
     

@@ -12,4 +12,5 @@ struct Habit: Identifiable {
     var habitName: String = ""
     var habitDetails: String = ""
     var habitDuration: Int = 0
+    var tasks: [Task] = []
 }

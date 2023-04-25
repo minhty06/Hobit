@@ -13,7 +13,6 @@ struct HabitDashboard: View {
     @State private var showSubcircles = false
     @State private var showDetail = false
     var habit: Habit
-    
     let rows = [
         GridItem(.adaptive(minimum: 50))
     ]
@@ -39,7 +38,7 @@ struct HabitDashboard: View {
                             .padding([.leading,.bottom], 15)
                     }
                     Spacer()
-                    ProgressCircle()
+                    ProgressCircle(habit: habit)
                         .padding(20)
                 }
 

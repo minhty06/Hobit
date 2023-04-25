@@ -16,51 +16,53 @@ struct HabitForm: View {
 //    @State private var newTask: String = ""
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var viewModel: HobitViewModel
-    
-    var body: some View {
-        NavigationView {
-            VStack {
-                Form {
-                    Section(header: Text("Name")) {
-                        TextField("Enter habit's name", text: $habitName)
-                    }
-                    
-                    Section(header: Text("Details")) {
-                        TextField("Enter habit's details", text: $habitDetail)
-                    }
-                    
-                    Section(header: Text("Duration")) {
-                        Stepper(value: $habitDuration, in: 1...30) {
-                            Text("\(habitDuration) days")
-                        }
-                    }
-                    
-                    // Placeholder for future feature: Reminder
-                    
-                    Section(header: Text("Reminders")) {
-                        Button(action: {
-//                            tasks.append(newTask)
-//                            newTask = ""
-                        }, label: {
-                            Text("Add Reminder")
-                        })
-                    }
-                    
-                    
-                    Button(action: {
-                        let newHabit = Habit(habitName: habitName, habitDetails: habitDetail, habitDuration: habitDuration)
-                        
-                        viewModel.addHabit(newHabit)
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Text("Save")
-                    }
-                    
 
+    var body: some View {
+            
+            NavigationView {
+                VStack {
+                    Form {
+                        Section(header: Text("Name")) {
+                            TextField("Enter habit's name", text: $habitName)
+                        }
+                        
+                        Section(header: Text("Details")) {
+                            TextField("Enter habit's details", text: $habitDetail)
+                        }
+                        
+                        Section(header: Text("Duration")) {
+                            Stepper(value: $habitDuration, in: 1...30) {
+                                Text("\(habitDuration) days")
+                            }
+                        }
+                        
+                        // Placeholder for future feature: Reminder
+                        
+                        Section(header: Text("Reminders")) {
+                            Button(action: {
+                                //                            tasks.append(newTask)
+                                //                            newTask = ""
+                            }, label: {
+                                Text("Add Reminder")
+                            })
+                        }
+                        
+                        
+                        Button(action: {
+                            let newHabit = Habit(habitName: habitName, habitDetails: habitDetail, habitDuration: habitDuration)
+                            
+                            viewModel.addHabit(newHabit)
+                            presentationMode.wrappedValue.dismiss()
+                            
+                        }) {
+                            Text("Save")
+                        }
+                        
+                        
+                    }
                 }
+                .navigationTitle("New Habit")
             }
-            .navigationTitle("New Habit")
-        }
     }
 }
 

@@ -14,7 +14,7 @@ struct TaskRow: View {
     var body: some View {
         HStack{
             Text(task.taskName)
-                .foregroundColor(Color.lightGreen)
+                .foregroundColor(Color.lightGrey)
                 .multilineTextAlignment(.leading)
                 .padding(.leading, 5)
             Spacer()

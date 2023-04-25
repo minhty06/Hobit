@@ -33,6 +33,28 @@ struct PublicData {
         routineList[routineIndex].tasks[taskIndex].completed.toggle()
     }
     
-    var habitList: [Habit]=[Habit(habitName: "Habit Name", habitDetails: "Habit Detail", habitDuration: 24),Habit(habitName: "Habit Name2", habitDetails: "Habit Detail2", habitDuration: 23)]
+    var habitList: [Habit] = [
+        Habit(habitName: "Habit Name", habitDetails: "Habit Detail", habitDuration: 24, tasks: [
+            Task(taskName: "Make Bed", completed: true),
+            Task(taskName: "Make Bed", completed: true),
+            Task(taskName: "Make Bed", completed: true),
+            Task(taskName: "Make Bed", completed: true),
+            Task(taskName: "Make Bed", completed: true),
+            Task(taskName: "Make Bed", completed: false),
+            Task(taskName: "Make Bed", completed: false),
+            Task(taskName: "Make Bed", completed: false),
+            Task(taskName: "Make Bed", completed: false),
+            Task(taskName: "Make Bed", completed: false),
+            Task(taskName: "Make Bed", completed: false),
+            Task(taskName: "Make Bed", completed: false),
+            Task(taskName: "Make Bed", completed: false)
+        ]),
+        Habit(habitName: "Habit Name2", habitDetails: "Habit Detail2", habitDuration: 23, tasks: [
+            Task(taskName: "Make Bed", completed: true),
+            Task(taskName: "Make Bed", completed: true),
+            Task(taskName: "Make Bed", completed: false),
+            Task(taskName: "Make Bed", completed: false)
+        ])
+    ]
     
 }
