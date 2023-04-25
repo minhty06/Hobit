@@ -13,8 +13,8 @@ struct HabitDashboard: View {
     @State private var showSubcircles = false
     @State private var showDetail = false
     var habit: Habit
-    let rows = [
-        GridItem(.adaptive(minimum: 50))
+    let columns = [
+        GridItem(.adaptive(minimum: 20),spacing: 3)
     ]
     var body: some View {
         VStack (alignment: .leading){
@@ -46,10 +46,10 @@ struct HabitDashboard: View {
 //            Group {
 //                if showDetail {
 //
-//                    LazyHGrid(rows: rows,
-//                              alignment: .top, spacing: 5){
-//                        ForEach(routine.tasks.indices) { index in
-//                            if routine.tasks[index].completed {
+//                    LazyVGrid(columns: columns,
+//                              alignment: .leading, spacing: 5){
+//                        ForEach(habit.tasks.indices) { index in
+//                            if habit.tasks[index].completed {
 //                                Circle()
 //                                    .foregroundColor(Color.lightGreen)
 //                                    .frame(width: 10, height: 10)
@@ -61,10 +61,11 @@ struct HabitDashboard: View {
 //
 //
 //                        }.padding(5)
-//                    }.padding(.leading)
+//                    }.padding(10)
 //
 //                }
 //            }.padding(.bottom)
+            
         }
         .background(Color.darkGreen,
                     in: RoundedRectangle(cornerRadius: 20))
