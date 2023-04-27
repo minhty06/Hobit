@@ -48,7 +48,7 @@ struct HabitDashboard: View {
 
                     LazyVGrid(columns: columns,
                               alignment: .leading, spacing: 5){
-                        ForEach(habit.tasks.indices) { index in
+                        ForEach(habit.tasks.indices, id: \.self) { index in
                             if habit.tasks[index].completed {
                                 Circle()
                                     .foregroundColor(Color.lightGreen)

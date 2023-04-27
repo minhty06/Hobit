@@ -17,7 +17,7 @@ struct ProgressCircle: View {
 
 
     var body: some View {
-        var completedTaskCount = habit.tasks.reduce(0) { count, task in
+        let completedTaskCount = habit.tasks.reduce(0) { count, task in
             if task.completed {
                 return count + 1
             } else {

@@ -58,7 +58,7 @@ struct RoutineDashboard: View {
             }
                 Group {
                     if showSubcircles {
-                        ForEach(routine.tasks.indices) { index in
+                        ForEach(routine.tasks.indices, id: \.self) { index in
                             TaskRow(task: routine.tasks[index], routine: routine)
                         }.padding(5)
                     }

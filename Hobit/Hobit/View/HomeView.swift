@@ -94,11 +94,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        let routine = Routine(routineName: "Morning Routine", routineDetails: "My daily morning routine", tasks: [
-            Task(taskName: "Task 1", completed: false),
-            Task(taskName: "Task 2", completed: false),
-            Task(taskName: "Task 3", completed: false)
-        ])
+
 
         HomeView().environmentObject(HobitViewModel())
     }
