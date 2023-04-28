@@ -20,7 +20,7 @@ struct AddView: View {
                 .font(.system(size: 30))
                 .foregroundColor(Color.black)
  
-            // Routine
+            // Routine Form
             NavigationLink(destination: RoutineForm()){
                 VStack {
                     Text("Routines")
@@ -42,7 +42,7 @@ struct AddView: View {
                 .padding(.horizontal, 20)
             }
  
-            //Habit
+            //Habit Form
             NavigationLink(destination: HabitForm()){
                 VStack {
                     Text("Habits")
@@ -64,7 +64,7 @@ struct AddView: View {
                 .padding(.horizontal, 20)
             }
             
-            // Goals
+            // Goals Form
             NavigationLink(destination: GoalsForm()){
                 VStack {
                     Text("Goals")

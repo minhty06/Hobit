@@ -15,15 +15,14 @@ struct SubCircleView: View {
     var body: some View {
         ZStack {
             Circle()
-                .fill(subcircleCompletion[index] ? Color.green : Color.gray) // change this line
+                .fill(subcircleCompletion[index] ? Color.green : Color.gray)
                 .frame(width: 30, height: 30)
             Image(systemName: "checkmark")
                 .foregroundColor(.white)
-                .opacity(subcircleCompletion[index] ? 1 : 0) // change this line
+                .opacity(subcircleCompletion[index] ? 1 : 0)
         }
         .onTapGesture {
-            subcircleCompletion[index].toggle() // change this line
-        }
+            subcircleCompletion[index].toggle() 
     }
     
 }

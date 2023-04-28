@@ -19,9 +19,7 @@ struct ContentView: View {
                     Image(systemName: "clock.badge.checkmark")
                     Text("Routine")
                 }
-            
-// MARK: Need help adding the cancel button to Add View
-            
+                        
             AddView()
                 .environmentObject(viewModel)
                 

@@ -53,6 +53,7 @@ struct HabitForm: View {
                             for i in 1...habitDuration {
                                 newTasks.append(Task(taskName: "task\(i)", completed: false))
                             }
+                            // Appends new Habit and allows new habbit to be created
                             let newHabit = Habit(habitName: habitName, habitDetails: habitDetail, habitDuration: habitDuration, tasks: newTasks)
                             
                             viewModel.addHabit(newHabit)

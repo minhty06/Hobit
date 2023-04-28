@@ -31,7 +31,7 @@ struct GoalView: View {
                 VStack(spacing: 40) {
                     VStack {
                         VStack(spacing: 7) {
-                            //Place routine dashboard here
+                            //Goals Link
                             RoutineDashboard(routine: Routine())
                         }
                         Spacer()

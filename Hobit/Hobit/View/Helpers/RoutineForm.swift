@@ -53,7 +53,7 @@ struct RoutineForm: View {
                             Text("Add Reminder")
                         })
                     }
-                    
+                    // Appends new task and allows new routine to be created
                     Button(action: {
                         tasks.append(newTask)
                         let newRoutine = Routine(routineName: routineName, routineDetails: routineDetail, tasks: tasks.map { Task(taskName: $0, completed: false) })

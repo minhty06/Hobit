@@ -29,6 +29,8 @@ struct HabitView: View {
                 .padding(.horizontal)
                 .padding(.bottom)
                 VStack(spacing: 40) {
+                    
+                    // Habits dashboard link
                     VStack {
                         VStack(spacing: 7) {
                             ForEach(viewModel.model.habitList) { habit in
