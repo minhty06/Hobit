@@ -23,8 +23,8 @@ struct SubCircleView: View {
         }
         .onTapGesture {
             subcircleCompletion[index].toggle() 
+        }
+        
     }
     
 }
-
-

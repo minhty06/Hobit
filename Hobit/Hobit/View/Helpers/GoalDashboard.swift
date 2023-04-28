@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct GoalDashboard: View {
-    @EnvironmentObject var viewModel: RoutineViewModel
+    @EnvironmentObject var viewModel: HobitViewModel
     @State private var isMainCircleComplete = false
     
     @State private var showSubcircles = false
@@ -44,8 +44,8 @@ struct GoalDashboard: View {
                     
                     LazyHGrid(rows: rows,
                               alignment: .top, spacing: 5){
-                        ForEach(routine.tasks.indices) { index in
-                            if routine.tasks[index].subcircleCompletion {
+                        ForEach(routine.tasks.indices, id: \.self) { index in
+                            if routine.tasks[index].completed {
                                 Circle()
                                     .foregroundColor(Color.lightGreen)
                                     .frame(width: 10, height: 10)
